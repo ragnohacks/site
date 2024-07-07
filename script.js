@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const canvasElements = window.innerWidth <= 479 ? [document.getElementById('canvas')] : document.getElementsByClassName('canvas');
-    const txt = window.innerWidth <= 479 ? [document.getElementById('txt')] : document.getElementById('txt-comp');
-
+    const txt = window.innerWidth <= 479 ? document.getElementById('txt') : document.getElementById('txt-comp');
     console.log(canvasElements);
     for (let i = 0; i < canvasElements.length; i++) {
         const canvas = canvasElements[i];
