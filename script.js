@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const canvasElements = window.innerWidth <= 768 ? [document.getElementById('canvas')] : document.getElementsByClassName('canvas');
+    const canvasElements = window.innerWidth <= 479 ? [document.getElementById('canvas')] : document.getElementsByClassName('canvas');
     console.log(canvasElements);
     for (let i = 0; i < canvasElements.length; i++) {
         const canvas = canvasElements[i];
