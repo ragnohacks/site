@@ -116,7 +116,7 @@ p {
 
     .image-3 {
         position: absolute;
-        top: 30vh;
+        top: 26vh;
         left: 7vw;
         width: 12vw;
     }
@@ -138,6 +138,10 @@ p {
 
     #sponsorus:hover {
         transform: scale(1.05);
+    }
+
+    #txt {
+        margin-top: 15vh;
     }
 }
 
