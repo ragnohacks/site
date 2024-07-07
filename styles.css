@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Adumu;
+    src: url(fonts/Adumu.ttf);
+}
+
+.canvas {
+    border: 1px solid #000;
+    user-select: none;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    height: 100vh;
+    text-align: center;
+}
+
+body h1 {
+    font-family: 'Adumu';
+    font-size: 5vw;
+}
+
+
+.drawing {
+    display: grid;
+    grid-column: 1 / 1;
+    padding: 1em;
+}
+
+.text {
+    display: grid;
+    grid-column: 2 / 2;
+}
+
+.images {
+    display: none; /* change!! */
+    position: absolute;
+}
+
+.canvas-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    gap: 10px;
+}
+
+.item-1 {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+}
+
+.item-2 {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+}
+
+.item-3 {
+    grid-column: 1 / span 2;
+    grid-row: 3;
+}
+
+.item-4 {
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 2;
+}
+
+.canvas {
+    height: 100%;
+    width: 100%;
+}
