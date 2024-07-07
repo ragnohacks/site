@@ -9,7 +9,27 @@
     src: url(fonts/Adumu.ttf);
 }
 
+@font-face {
+    font-family: noto-music;
+    src: url(fonts/noto-music.ttf);
+}
+
+@font-face {
+    font-family: masked-marvel;
+    src: url(fonts/maskr.ttf);
+}
+
+p {
+    margin-bottom: -4em;
+    font-family: 'noto-music';
+}
+
 @media screen and (max-width: 750px){
+    p {
+        font-size: 4vw;
+        margin-bottom: -2em;
+    }
+
     .canvas {
         position: fixed;
         top: 0;
