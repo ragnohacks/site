@@ -27,7 +27,7 @@ p {
 @media screen and (max-width: 750px){
     p {
         font-size: 4vw;
-        margin-bottom: -2em;
+        margin-bottom: 0;
     }
 
     .canvas {
