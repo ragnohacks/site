@@ -24,6 +24,12 @@ p {
     font-family: 'noto-music';
 }
 
+/* #txt,
+#txt-comp {
+    z-index: -2;
+    position: absolute;
+} */
+
 @media screen and (max-width: 750px){
     p {
         font-size: 4vw;
@@ -140,9 +146,9 @@ p {
         transform: scale(1.05);
     }
 
-    #txt {
+    /* #txt {
         margin-top: 15vh;
-    }
+    } */
 }
 
 @media screen and (min-width: 760px) and (max-width: 959px) {
