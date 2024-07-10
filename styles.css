@@ -234,6 +234,7 @@ p {
         top: 0;
         right: -3em;
         width: 13vw;
+        transform: rotate(10deg);
     }
 
     .image-2 {
@@ -242,6 +243,7 @@ p {
         left: 0;
         transform: translateY(-50%);
         width: 10vw;
+        transform: scaleX(-1);
     }
 
     .image-3 {
@@ -394,6 +396,7 @@ p {
         top: 0;
         right: -3em;
         width: 13vw;
+        transform: rotate(10deg);
     }
 
     .image-2 {
@@ -402,6 +405,7 @@ p {
         left: 0;
         transform: translateY(-50%);
         width: 10vw;
+        transform: scaleX(-1);
     }
 
     .image-3 {
