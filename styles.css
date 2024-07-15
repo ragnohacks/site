@@ -28,6 +28,25 @@ p {
     margin-top: -2vh;
 }
 
+body h1 {
+    letter-spacing: 2.5px;
+}
+
+input[type="email"] {
+    letter-spacing: 0.8px;
+}
+
+#sponsorus img {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+}
+
+#sponsorus img:hover {
+    transform: scale(1.02);
+    box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+    border-radius: 10px;
+}
+
 @media screen and (max-width: 750px){
     p {
         font-size: 4vw;
@@ -132,16 +151,8 @@ p {
         width: 15vw;
     }
 
-    #sponsorus {
-        transition: transform 0.3s;
-    }
-
     #sponsorus img {
         width: 50vw !important;
-    }
-
-    #sponsorus:hover {
-        transform: scale(1.05);
     }
 
     #txt {
@@ -292,14 +303,6 @@ p {
     .canvas {
         height: 100%;
         width: 100%;
-    }
-
-    #sponsorus {
-        transition: transform 0.3s;
-    }
-
-    #sponsorus:hover {
-        transform: scale(1.05);
     }
 
     .mobile-images {
@@ -454,14 +457,6 @@ p {
     .canvas {
         height: 100%;
         width: 100%;
-    }
-
-    #sponsorus {
-        transition: transform 0.3s;
-    }
-
-    #sponsorus:hover {
-        transform: scale(1.05);
     }
 
     .mobile-images {
