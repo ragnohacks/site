@@ -77,7 +77,18 @@ document.addEventListener("DOMContentLoaded", function() {
     initializeCanvas();
 
     // Reload the page on resize
+    let initialWidth = window.innerWidth;
+    let initialHeight = window.innerHeight;
+    const resizeThreshold = 50; // Adjust this value as needed
+
     window.addEventListener('resize', () => {
-        location.reload();
+        const currentWidth = window.innerWidth;
+        const currentHeight = window.innerHeight;
+        const widthDifference = Math.abs(currentWidth - initialWidth);
+        const heightDifference = Math.abs(currentHeight - initialHeight);
+    
+        if (widthDifference > resizeThreshold || heightDifference > resizeThreshold) {
+            location.reload();
+        }
     });
 });
