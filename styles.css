@@ -100,6 +100,7 @@ input[type="email"] {
         align-items: flex-start;
         justify-content: center;
         font-family: 'Adumu';
+        gap: 0.5em;
     }
 
     input[type="email"] {
@@ -195,6 +196,7 @@ input[type="email"] {
         align-items: flex-start;
         justify-content: center;
         font-family: 'Adumu';
+        gap: 0.5em;
     }
 
     input[type="email"] {
