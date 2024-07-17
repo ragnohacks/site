@@ -47,6 +47,10 @@ input[type="email"] {
     border-radius: 10px;
 }
 
+form {
+    gap: 0.5em;
+}
+
 @media screen and (max-width: 750px){
     p {
         font-size: 4vw;
@@ -195,7 +199,6 @@ input[type="email"] {
         align-items: flex-start;
         justify-content: center;
         font-family: 'Adumu';
-        gap: 0.5em;
     }
 
     input[type="email"] {
@@ -350,7 +353,6 @@ input[type="email"] {
         align-items: flex-start;
         justify-content: center;
         font-family: 'Adumu';
-        gap: 0.5em;
     }
 
     input[type="email"] {
