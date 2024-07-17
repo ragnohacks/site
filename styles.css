@@ -25,7 +25,9 @@ p {
 }
 
 #txt-comp {
-    margin-top: -2vh;
+    position: absolute;
+    top: 0.4em;
+    left: 6vw;
 }
 
 body h1 {
