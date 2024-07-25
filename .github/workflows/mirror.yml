@@ -9,7 +9,7 @@ concurrency:
 
 jobs:
   mirror:
-    if: ${{ github.repository == vars.MIRROR_REPO }}
+    if: github.repository == 'samdev-7/ragno-site'
     runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v3
