@@ -1,0 +1,17 @@
+name: Mirror repo
+
+on: 
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: bridgelightcloud/github-mirror-action@v3
+        with:
+          origin: 'https://github.com/ragnohacks/site.git'
+          GITHUB_TOKEN: ${{ secrets.PAT }}
