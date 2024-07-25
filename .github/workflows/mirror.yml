@@ -15,7 +15,7 @@ jobs:
         - uses: actions/checkout@v3
           with:
             fetch-depth: 0
-        - uses: yesolutions/mirror-action@v0.7.0
+        - uses: yesolutions/mirror-action@master
           with:
             REMOTE: 'https://github.com/samdev-7/ragno-site.git'
             GIT_USERNAME: samdev-7
