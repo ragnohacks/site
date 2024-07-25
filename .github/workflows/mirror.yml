@@ -19,4 +19,4 @@ jobs:
           with:
             REMOTE: 'https://github.com/samdev-7/ragno-site.git'
             GIT_USERNAME: "samdev-7"
-            GIT_PASSWORD: "sanity-check"
+            GIT_PASSWORD: ${{ secrets.PAT }}
