@@ -1,0 +1,15 @@
+name: Sync mirror
+
+on: [push]
+
+jobs:
+  mirror:
+    steps:
+        - uses: actions/checkout@v3
+          with:
+            fetch-depth: 0
+        - uses: yesolutions/mirror-action@v0.7.0
+          with:
+            REMOTE: 'https://gitlab.com/spyoungtech/mirror-action.git'
+            GIT_USERNAME: spyoungtech
+            GIT_PASSWORD: ${{ secrets.MIRROR_PAT }}
