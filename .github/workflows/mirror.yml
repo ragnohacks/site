@@ -13,6 +13,6 @@ jobs:
             fetch-depth: 0
         - uses: yesolutions/mirror-action@v0.7.0
           with:
-            REMOTE: 'https://gitlab.com/spyoungtech/mirror-action.git'
+            REMOTE: 'https://gitlab.com/samdev-7/ragno-site.git'
             GIT_USERNAME: spyoungtech
             GIT_PASSWORD: ${{ secrets.MIRROR_PAT }}
