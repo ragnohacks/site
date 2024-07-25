@@ -14,5 +14,5 @@ jobs:
         - uses: yesolutions/mirror-action@v0.7.0
           with:
             REMOTE: 'https://gitlab.com/samdev-7/ragno-site.git'
-            GIT_USERNAME: spyoungtech
+            GIT_USERNAME: samdev-7
             GIT_PASSWORD: ${{ secrets.MIRROR_PAT }}
