@@ -1,55 +1,62 @@
 ---
 const height = "h-20 w-auto";
+const info = [
+  { name: "name1", role: "role1", fact: "fact1" },
+  { name: "name2", role: "role2", fact: "fact2" },
+  { name: "name3", role: "role3", fact: "fact3" },
+  { name: "name4", role: "role4", fact: "fact4" },
+  { name: "name5", role: "role5", fact: "fact5" },
+  { name: "name6", role: "role6", fact: "fact6" },
+  { name: "name7", role: "role7", fact: "fact7" },
+  { name: "name8", role: "role8", fact: "fact8" },
+  { name: "name9", role: "role9", fact: "fact9" },
+  { name: "name10", role: "role10", fact: "fact10" },
+];
 ---
-<br>
-<div class="text-center width-screen bg-dino-teal pt-8">
-    <h1 class="text-white text-xs sm:text-lg">Made with ❤️ by students, hosted in Ottawa</h1>
-    <div class="flex flex-row flex-wrap justify-center gap-5 pt-6 pb-20 px-1">
-        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name1', 'role1', 'fact1')">
-        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name2', 'role2', 'fact2')">
-        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name3', 'role3', 'fact3')">
-        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name4', 'role4', 'fact4')">
-        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name5', 'role5', 'fact5')">
-        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name6', 'role6', 'fact6')">
-        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name7', 'role7', 'fact7')">
-        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name8', 'role8', 'fact8')">
-        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name9', 'role9', 'fact9')">
-        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name10', 'role10', 'fact10')">
-    </div>
-    <div id="info" style="display:none; position: absolute; background: white; padding: 10px; border: 1px solid #ccc;">
-        <h1 id="info-name"></h1>
-        <h2 id="info-role"></h2>
-        <p id="info-fact"></p>
-    </div>
-    <div class="bg-dino-dark-teal w-screen h-7"></div>
+
+<div class="text-center w-screen bg-dino-teal pt-8">
+  <h1 class="text-white text-xs sm:text-lg">
+    Made with ❤️ by students, hosted in Ottawa
+  </h1>
+  <div class="flex flex-row flex-wrap justify-center gap-5 pt-6 pb-20 px-1">
+    {
+      info.map((item, index) => (
+        <div class="relative group" key={index}>
+          <img
+            src="./placeholder.png"
+            alt={`Placeholder ${index + 1}`}
+            class={height}
+          />
+          <div class="absolute top-20 left-0 invisible opacity-0 group-hover:visible group-hover:opacity-100 group-hover:animate-fadeIn bg-white p-2 border border-gray-300 transition-all text-dino-neon-orange rounded-xl z-10 flex flex-row w-64">
+            <img src="./placeholder-square.png" alt="drawing" class="h-24" />
+            <div class="pl-3 text-left">
+              <h1 class="font-bold">{item.name}</h1>
+              <h2 class="font-bold">{item.role}</h2>
+              <p class="mt-2 text-sm">{item.fact}</p>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <div class="bg-dino-dark-teal w-screen h-7"></div>
 </div>
 
-<script>
-    interface Window {
-        hi: (event: MouseEvent, name: string, role: string, fact: string) => void;
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
     }
+    to {
+      opacity: 100;
+    }
+  }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        window.hi = function(event: MouseEvent, name: string, role: string, fact: string) {
-            const infoDiv = document.getElementById('info');
-            const infoName = document.getElementById('info-name');
-            const infoRole = document.getElementById('info-role');
-            const infoFact = document.getElementById('info-fact');
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+  }
 
-            if (infoDiv && infoName && infoRole && infoFact) {
-                // Update the content of the info div
-                infoName.textContent = name;
-                infoRole.textContent = role;
-                infoFact.textContent = fact;
-
-                // Position the info div next to the clicked image
-                const imgRect = (event.target as HTMLElement).getBoundingClientRect();
-                infoDiv.style.top = `${imgRect.bottom + window.scrollY}px`;
-                infoDiv.style.left = `${imgRect.left + window.scrollX}px`;
-
-                // Make the info div visible
-                infoDiv.style.display = 'block';
-            }
-        };
-    });
-</script>
+  .group:hover .group-hover\\:animate-fadein {
+    z-index: 10;
+  }
+</style>
