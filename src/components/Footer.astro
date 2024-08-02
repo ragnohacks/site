@@ -1,0 +1,55 @@
+---
+const height = "h-20 w-auto";
+---
+<br>
+<div class="text-center width-screen bg-dino-teal pt-8">
+    <h1 class="text-white text-xs sm:text-lg">Made with ❤️ by students, hosted in Ottawa</h1>
+    <div class="flex flex-row flex-wrap justify-center gap-5 pt-6 pb-20 px-1">
+        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name1', 'role1', 'fact1')">
+        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name2', 'role2', 'fact2')">
+        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name3', 'role3', 'fact3')">
+        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name4', 'role4', 'fact4')">
+        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name5', 'role5', 'fact5')">
+        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name6', 'role6', 'fact6')">
+        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name7', 'role7', 'fact7')">
+        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name8', 'role8', 'fact8')">
+        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name9', 'role9', 'fact9')">
+        <img src="./placeholder.png" alt="Placeholder 1" class={height} onmouseover="handleMouseOver('name10', 'role10', 'fact10')">
+    </div>
+    <div id="info" style="display:none; position: absolute; background: white; padding: 10px; border: 1px solid #ccc;">
+        <h1 id="info-name"></h1>
+        <h2 id="info-role"></h2>
+        <p id="info-fact"></p>
+    </div>
+    <div class="bg-dino-dark-teal w-screen h-7"></div>
+</div>
+
+<script>
+    interface Window {
+        hi: (event: MouseEvent, name: string, role: string, fact: string) => void;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        window.hi = function(event: MouseEvent, name: string, role: string, fact: string) {
+            const infoDiv = document.getElementById('info');
+            const infoName = document.getElementById('info-name');
+            const infoRole = document.getElementById('info-role');
+            const infoFact = document.getElementById('info-fact');
+
+            if (infoDiv && infoName && infoRole && infoFact) {
+                // Update the content of the info div
+                infoName.textContent = name;
+                infoRole.textContent = role;
+                infoFact.textContent = fact;
+
+                // Position the info div next to the clicked image
+                const imgRect = (event.target as HTMLElement).getBoundingClientRect();
+                infoDiv.style.top = `${imgRect.bottom + window.scrollY}px`;
+                infoDiv.style.left = `${imgRect.left + window.scrollX}px`;
+
+                // Make the info div visible
+                infoDiv.style.display = 'block';
+            }
+        };
+    });
+</script>
