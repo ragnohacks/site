@@ -2,7 +2,13 @@
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				'dino-teal': '#76B8B0',
+				'dino-orange': '#FFBE74',
+				'dino-dark-orange': '#E97D04',
+			},
+		},
 	},
 	plugins: [],
 }
