@@ -1,8 +1,20 @@
 ---
 import Hero from "../components/Hero.astro";
+import Lore from "../components/Lore.astro";
+import Navbar from "../components/Navbar.astro";
+import Overview from "../components/Overview.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Ragnohacks">
-  <Hero />
+  <header>
+    <!-- Eddie -->
+    <Navbar />
+    <!-- Sam -->
+    <Hero />
+  </header>
+  <main>
+    <Lore />
+    <Overview />
+  </main>
 </Layout>
