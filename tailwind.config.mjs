@@ -10,6 +10,9 @@ export default {
 				'dino-orange': '#FFBE74',
 				'dino-dark-orange': '#E97D04',
 			},
+			fontFamily: {
+				'inter': ['"Inter"', 'sans-serif'],
+			},
 		},
 	},
 	plugins: [],
