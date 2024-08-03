@@ -13,6 +13,12 @@ export default {
 			fontFamily: {
 				'inter': ['"Inter"', 'sans-serif'],
 			},
+			maxWidth: {
+				'10xl': '140rem'
+			},
+			minWidth: {
+				'70l': '80rem'
+			},
 		},
 	},
 	plugins: [],
