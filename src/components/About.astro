@@ -45,14 +45,30 @@
         stroke-linejoin="round"></path>
     </svg> -->
   </div>
-  <div class="text-center">
-    <p class="text-xl font-thin font-inter text-light-dino-teal">
+  <div class="text-center -mt-16">
+    <p class="text-xl font-thin font-inter text-light-dino-teal lg:text-2xl">
       REPRESENT A COUNTRY
     </p>
-    <h2 class="text-3xl text-dark-dino-teal">JOIN US AGAINST</h2>
-    <h1 class="text-5xl font-adumu text-white">NATURAL<br />DISASTERS</h1>
+    <h2 class="text-4xl text-dark-dino-teal mt-5 lg:text-5xl">JOIN US AGAINST</h2>
+    <h1 class="text-7xl font-adumu text-white lg:text-8xl">NATURAL<br />DISASTERS</h1>
+  </div>
+
+  <div
+    class="flex flex-row items-end z-50 relative justify-center max-w-max min-w-30l sm:min-w-full"
+  >
+    <img
+      src="/cloud.png"
+      alt=""
+      class="relative left-10 max-w-md top-10 md:max-w-xl md:top-14 lg:max-w-3xl lg:top-20 cloud-animation3"
+    />
+    <img
+      src="/cloud2.png"
+      alt=""
+      class="relative right-10 max-w-md top-10 md:max-w-xl md:top-14 lg:max-w-3xl lg:top-20 cloud-animation4"
+    />
   </div>
 </div>
+<br>
 
 <style>
   @keyframes floating {
@@ -60,7 +76,7 @@
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-10px);
+      transform: translateY(-20px) translateX(-10px);
     }
     100% {
       transform: translateY(0);
@@ -68,15 +84,16 @@
   }
 
   .cloud-animation {
-    animation: floating 3s ease-in-out infinite;
+    animation: floating 5s ease-in-out infinite;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
   }
 
   @keyframes floating2 {
     0% {
       transform: translateY(0);
     }
-    50% {
-      transform: translateY(-8px);
+    60% {
+      transform: translateY(-15px) translateX(10px);
     }
     100% {
       transform: translateY(0);
@@ -84,9 +101,53 @@
   }
 
   .cloud-animation2 {
-    animation: floating2 3s ease-in-out infinite;
+    animation: floating2 5s ease-in-out infinite;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
   }
 
+  @keyframes floating3 {
+    0% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-25px) translateX(-15px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .cloud-animation3 {
+    animation: floating3 5s ease-in-out infinite;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+  }
+
+  @keyframes floating4 {
+    0% {
+      transform: translateY(0);
+    }
+    70% {
+      transform: translateY(-14px) translateX(15px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .cloud-animation4 {
+    animation: floating4 5s ease-in-out infinite;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+  }
+
+  .cloud-animation,
+  .cloud-animation2 {
+    animation-delay: 0s;
+  }
+
+  .cloud-animation3,
+  .cloud-animation4 {
+    animation-delay: 2.5s;
+  }
 
   .add-width {
     width: calc(100% + 20rem);
