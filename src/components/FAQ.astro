@@ -1,100 +1,188 @@
 ---
-const title = "flex flex-col text-5xl border-dino-teal border-4 border-solid p-5 rounded-xl justify-center w-auto";
+const title =
+  "flex flex-col text-5xl border-dino-teal border-4 border-solid p-5 rounded-xl justify-center w-auto";
+const title2 = "flex flex-col text-5xl p-5 justify-center w-auto items-center";
 const titleTeal = "text-dino-teal font-extrabold whitespace-nowrap";
 const titleOrange = "text-dino-neon-orange font-bold";
-const text = "text-dino-teal text-2xl rounded-xl w-full h-full sm:border-dino-teal sm:border-4 sm:border-solid sm:p-5";
+
+const titleTeal2 = "text-dino-teal font-extrabold whitespace-nowrap text-3xl";
+const titleOrange2 = "text-dino-neon-orange font-bold text-3xl";
+
+const text =
+  "text-dino-teal text-2xl rounded-xl w-full h-full sm:border-dino-teal sm:border-4 sm:border-solid sm:p-5";
+const text2 =
+  "text-dino-teal text-sm h-auto p-2";
 ---
 
 <div class="mt-10 text-center px-10">
   <h1 class="text-dino-teal text-7xl font-extrabold">FAQ</h1>
   <div class="flex flex-col gap-5">
-    <div class="flex flex-row gap-5">
-      <div
-        class={title}
-      >
+    <div class="hidden sm:flex flex-row gap-5">
+      <div class={title}>
         <h1 class={titleTeal}>WHAT IS A</h1>
         <h1 class={titleOrange}>HACKATHON</h1>
       </div>
       <div>
-        <p
-          class={text}
-        >
-          A hackathon is a design sprint-like event in which computer
-          programmers and others involved in software development, including
-          graphic designers, interface designers, project managers, and others,
-          often including subject-matter-experts, collaborate intensively on
-          software projects.
+        <p class={text}>
+          A hackathon is an event where programmers, designers, project managers, and subject-matter experts work together on software projects.
         </p>
       </div>
     </div>
 
-    <div class="flex flex-row gap-5">
+    <button
+    class="ladda-button text-black relative p-0 border-dino-teal border-4 border-solid rounded-xl sm:hidden"
+    onclick="this.classList.toggle('loading')"
+  >
+    <span class="label transition-opacity duration-300">
+      <div class={title2}>
+        <h1 class={titleTeal2}>WHAT IS A</h1>
+        <h1 class={titleOrange2}>HACKATHON</h1>
+      </div>
+    </span>
+    <span
+      class="spinner absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-300 text-black"
+      ><p class={text2}>
+        A hackathon is an event where programmers, designers, project managers, and subject-matter experts work together on software projects.
+      </p></span
+    >
+  </button>
+
+    <div class="hidden sm:flex flex-row gap-5">
       <div>
-        <p
-          class={text}
-        >
-          Anyone with an interest in software development can participate in a
-          hackathon. It is open to programmers, designers, project managers, and
-          subject-matter experts.
+        <p class={text}>
+          Students of any education level from anywhere in the world are eligible! Everyone must be 13 years or older to participate.
         </p>
       </div>
-      <div
-        class={title}
-      >
+      <div class={title}>
         <h1 class={titleTeal}>WHO CAN</h1>
         <h1 class={titleOrange}>PARTICIPATE</h1>
       </div>
     </div>
 
-    <div class="flex flex-row gap-5">
-      <div
-        class={title}
-      >
+    <button
+    class="ladda-button text-black relative p-0 border-dino-teal border-4 border-solid rounded-xl sm:hidden"
+    onclick="this.classList.toggle('loading')"
+  >
+    <span class="label transition-opacity duration-300">
+      <div class={title2}>
+        <h1 class={titleTeal2}>WHO CAN</h1>
+        <h1 class={titleOrange2}>PARTICIPATE</h1>
+      </div>
+    </span>
+    <span
+      class="spinner absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-300 text-black"
+      ><p class={text2}>
+        Students of any education level from anywhere in the world are eligible! Everyone must be 13 years or older to participate.
+      </p></span
+    >
+  </button>
+
+    <div class="hidden sm:flex flex-row gap-5">
+      <div class={title}>
         <h1 class={titleTeal}>DO I NEED</h1>
         <h1 class={titleOrange}>EXPERIENCE?</h1>
       </div>
       <div>
-        <p
-          class={text}
-        >
+        <p class={text}>
           No prior experience is required to participate in a hackathon. It is
           open to beginners and experienced individuals alike.
         </p>
       </div>
     </div>
 
-    <div class="flex flex-row gap-5">
+    <button
+    class="ladda-button text-black relative p-0 border-dino-teal border-4 border-solid rounded-xl sm:hidden"
+    onclick="this.classList.toggle('loading')"
+  >
+    <span class="label transition-opacity duration-300">
+      <div class={title2}>
+        <h1 class={titleTeal2}>DO I NEED</h1>
+        <h1 class={titleOrange2}>EXPERIENCE?</h1>
+      </div>
+    </span>
+    <span
+      class="spinner absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-300 text-black"
+      ><p class={text2}>
+        No prior experience is required to participate in a hackathon. It is
+          open to beginners and experienced individuals alike.
+      </p></span
+    >
+  </button>
+
+    <div class="hidden sm:flex flex-row gap-5">
       <div>
-        <p
-          class={text}
-        >
+        <p class={text}>
           There is no cost to participate in a hackathon. It is free for all
           attendees. You just need to bring your enthusiasm and creativity!
         </p>
       </div>
-      <div
-        class={title}
-      >
+      <div class={title}>
         <h1 class={titleTeal}>HOW MUCH</h1>
         <h1 class={titleOrange}>IS IT?</h1>
       </div>
     </div>
 
-    <div class="flex flex-row gap-5">
-      <div
-        class={title}
-      >
+    <button
+    class="ladda-button text-black relative p-0 border-dino-teal border-4 border-solid rounded-xl sm:hidden"
+    onclick="this.classList.toggle('loading')"
+  >
+    <span class="label transition-opacity duration-300">
+      <div class={title2}>
+        <h1 class={titleTeal2}>HOW MUCH</h1>
+        <h1 class={titleOrange2}>IS IT?</h1>
+      </div>
+    </span>
+    <span
+      class="spinner absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-300 text-black"
+      ><p class={text2}>
+        There is no cost to participate in a hackathon. It is free for all
+          attendees. You just need to bring your enthusiasm and creativity!
+      </p></span
+    >
+  </button>
+
+    <div class="hidden sm:flex flex-row gap-5">
+      <div class={title}>
         <h1 class={titleTeal}>WHAT SHOULD</h1>
         <h1 class={titleOrange}>I BRING?</h1>
       </div>
       <div>
-        <p
-          class={text}
-        >
+        <p class={text}>
           You should bring your own laptop and any other tools or resources you
           may need for the hackathon.
         </p>
       </div>
     </div>
+
+    <button
+    class="ladda-button text-black relative p-0 border-dino-teal border-4 border-solid rounded-xl sm:hidden items-center"
+    onclick="this.classList.toggle('loading')"
+  >
+    <span class="label transition-opacity duration-300">
+      <div class={title2}>
+        <h1 class={titleTeal2}>WHAT SHOULD</h1>
+        <h1 class={titleOrange2}>I BRING?</h1>
+      </div>
+    </span>
+    <span
+      class="spinner absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-300 text-black"
+      ><p class={text2}>
+        You should bring your own laptop and any other tools or resources you
+          may need for the hackathon.
+      </p></span
+    >
+  </button>
   </div>
+
 </div>
+<style>
+  .ladda-button.loading .label {
+    opacity: 0;
+    transform: translateY(1em);
+  }
+
+  .ladda-button.loading .spinner {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+</style>
