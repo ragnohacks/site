@@ -7,6 +7,7 @@ export default {
 				'dino-teal': '#76B8B0',
 				'dino-dark-teal': '#449F94',
 				'dino-neon-orange': '#FDA747',
+				'dino-dark-neon-orange': '#FF8700',
 				'dino-orange': '#FFBE74',
 				'dino-dark-orange': '#E97D04',
 				'light-dino-teal': '#ADD4D0',
