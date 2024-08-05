@@ -13,6 +13,9 @@ export default {
 				'dark-dino-teal': '#C8E3DF',
 
 			},
+			gridTemplateColumns: {
+				'weird': '1fr 0.1fr 1fr',
+			},
 			fontFamily: {
 				'inter': ['"Inter"', 'sans-serif'],
 				'adumu': ['"Adumu"', 'sans-serif'],
