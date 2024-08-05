@@ -29,7 +29,7 @@
                 <img
                     src="/squares/image3.png"
                     alt="Natural Disasters"
-                    class=""
+                    class=""http://localhost:4321/squares/image.png
                 />
             </div>
             <div class="flex-1">
@@ -42,16 +42,44 @@
         </div>
     </div> -->
 
-    <div class="flex flex-col flex-wrap h-auto w-screen p-5">
+    <!-- <div class="flex flex-col flex-wrap h-auto w-screen p-5">
         <img src="/squares/image.png" alt="">
-        <!-- <div class="flex flex-row w-full h-1/2">
-            <img src="/squares/image.png" alt="image" class="object-contain w-auto h-auto">
-            <img src="/squares/image2.png" alt="image2" class="object-contain w-auto h-auto -ml-72">
+    </div> -->
+
+    <div class="flex items-center justify-center min-h-screen bg-white">
+        <div class="grid grid-cols-2 gap-2 w-4/5 max-w-8xl">
+            <div class="flex items-center justify-center rounded-lg ">
+                <img src="/squares/image1.png" alt="75+ Hackers" class="w-full h-full ">
+            </div>
+            <div class="flex items-center justify-center rounded-lg ">
+                <img src="/squares/image2.png" alt="Diefen Bunker" class="w-96 h-full">
+            </div>
+            <div class="flex items-center justify-center rounded-lg ">
+                <img src="/squares/image3.png" alt="Natural Disasters" class="w-full h-full ">
+            </div>
+            <div class="flex items-center justify-center rounded-lg ">
+                <img src="/squares/image4.png" alt="35+ Countries" class="w-full h-full ">
+            </div>
         </div>
-        <div class="flex flex-row w-full h-1/2 gap-5">
-            <img src="/squares/image3.png" alt="image3" class="object-contain w-auto h-auto">
-            <img src="/squares/image4.png" alt="image4" class="object-contain w-auto h-auto">
-        </div> -->
     </div>
-    
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 2px;
+            width: 1375px;
+            height: 684px;
+            position: relative;
+        }
+        .overlap {
+            grid-column: span 2;
+            position: relative;
+        }
+        .overlap .inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
 </div>
