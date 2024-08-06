@@ -12,6 +12,7 @@ export default {
 				'dino-dark-orange': '#E97D04',
 				'light-dino-teal': '#ADD4D0',
 				'dark-dino-teal': '#C8E3DF',
+				'dino-dark-text': 'rgb(43 118 109)',
 
 			},
 			gridTemplateColumns: {
