@@ -133,4 +133,13 @@
   .add-width {
     width: calc(100% + 20rem);
   }
+
+  @media (prefers-reduced-motion: reduce) {
+      .cloud-animation,
+      .cloud-animation2,
+      .cloud-animation3,
+      .cloud-animation4 {
+        animation: none;
+      }
+    }
 </style>

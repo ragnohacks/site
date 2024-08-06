@@ -47,5 +47,11 @@
     .scrolling-text {
       animation: scroll-left 20s linear infinite;
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      .scrolling-text {
+        animation: none;
+      }
+    }
   </style>
   
