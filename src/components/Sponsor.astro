@@ -1,4 +1,4 @@
-<div class="overflow-x-clip flex justify-center flex-col bg-dino-teal">
+<div class="overflow-x-clip flex justify-center flex-col bg-dino-teal" id="sponsors">
   <div
     class="left-10 flex flex-row items-end z-10 relative justify-center max-w-max min-w-30l sm:min-w-full"
   >
@@ -23,13 +23,13 @@
       Help make Ottawa’s first high school hackathon a reality!
     </p>
     <button
-      class="bg-dino-neon-orange py-4 px-7 text-white rounded-full transition-all hover:cursor-pointer hover:scale-125"
+    onclick="window.location.href = 'mailto:team@ragnohacks.ca';"
+      class="bg-dino-neon-orange py-4 px-7 text-white rounded-full transition-all hover:cursor-pointer hover:scale-110"
       >Become a Sponsor!</button
     >
-    <p class="text-white mt-5">
-      Shoot us a quick email at teams@ragnohacks.ca or sign up!
-    </p>
-
+    <div class="text-white">
+      <p class="mt-5">Shoot us a quick email at <a href="mailto:team@ragnohacks.ca" class="underline">team@ragnohacks.ca</a> or sign up!</p>
+    </div>
     <div>
       <h1>Images later</h1>
     </div>
@@ -135,11 +135,11 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-      .cloud-animation,
-      .cloud-animation2,
-      .cloud-animation3,
-      .cloud-animation4 {
-        animation: none;
-      }
+    .cloud-animation,
+    .cloud-animation2,
+    .cloud-animation3,
+    .cloud-animation4 {
+      animation: none;
     }
+  }
 </style>
