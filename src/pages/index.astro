@@ -2,29 +2,27 @@
 import Hero from "../components/Hero.astro";
 import Lore from "../components/Lore.astro";
 import Navbar from "../components/Navbar.astro";
-import Overview from "../components/Overview.astro";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
-import About from "../components/About.astro";
 import Sponsor from "../components/Sponsor.astro";
 import FAQ from "../components/FAQ.astro";
-import Details from "../components/Details.astro";
-import Info from "../components/Info.astro";
+import Important from "../components/Important.astro";
+import Overview from "../components/Overview.astro";
 ---
 
 <Layout title="Ragnohacks">
   <header>
     <Navbar />
     <Hero />
-    <About />
-    <Info />
-    <Details />
-    <Sponsor />
-    <FAQ />
   </header>
   <main>
     <Lore />
     <Overview />
-    <Footer />
+    <Important />
+    <Sponsor />
+    <FAQ />
   </main>
+  <footer>
+    <Footer />
+  </footer>
 </Layout>
