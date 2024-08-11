@@ -87,8 +87,13 @@ if (slug == "/") slug = "";
     }
 
     @font-face {
-      font-family: "adumu";
-      src: url("/fonts/Adumu.ttf") format("truetype");
+      font-family: "Adumu";
+      src:
+        url("/fonts/Adumu.woff2") format("woff2"),
+        url("/fonts/Adumu.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: block;
     }
 
     @tailwind utilities;
