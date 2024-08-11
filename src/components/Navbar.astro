@@ -1,5 +1,5 @@
 <nav
-  class="fixed top-0 left-0 right-0 z-50 flex justify-center text-white bg-dino-teal"
+  class="fixed top-0 left-0 right-0 z-50 flex justify-center text-white bg-dino-teal motion-safe:transition-all"
 >
   <div class="flex h-16 max-w-6xl mx-8 md:h-20 grow">
     <a
@@ -119,3 +119,16 @@
     filter: drop-shadow(rgba(0, 0, 0, 0.5) 4px 3px 1px);
   }
 </style>
+
+<script lang="ts">
+  const nav = document.querySelector("nav");
+
+  window.addEventListener("scroll", () => {
+    let scrollPos = window.scrollY;
+    if (scrollPos > 5) {
+      nav.classList.add("shadow");
+    } else {
+      nav.classList.remove("shadow");
+    }
+  });
+</script>
