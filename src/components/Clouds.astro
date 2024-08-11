@@ -1,7 +1,7 @@
 ---
 const numClouds = 16;
 
-const cloudVariants = ["cloud.png", "cloud2.png"];
+const cloudVariants = ["/clouds/cloud0.svg"];
 const delayMin = -5;
 const delayMax = 0;
 
@@ -23,7 +23,7 @@ for (let i = 0; i < numClouds; i++) {
     {
       randDelay.map((delay, i) => (
         <img
-          src={`/${randVariant[i]}`}
+          src={`${randVariant[i]}`}
           aria-hidden="true"
           class="h-32 md:h-64 -mt-16 md:-mt-36 drop-shadow-md -ml-8 md:-ml-14 pointer-events-none select-none"
           style={`animation: floating 5s ease-in-out infinite; animation-delay: ${delay}s;`}
