@@ -86,13 +86,13 @@ if (slug == "/") slug = "";
       @apply text-dino-dark-teal font-inter font-medium;
     }
 
+    @font-face {
+      font-family: "adumu";
+      src: url("/fonts/Adumu.ttf") format("truetype");
+    }
+
     @tailwind utilities;
     @layer utilities {
-      @font-face {
-        font-family: 'adumu';
-        src: url('/fonts/Adumu.ttf') format('truetype'); 
-      }
-      
       .font-thin {
         font-variation-settings: "wght" 100;
       }
