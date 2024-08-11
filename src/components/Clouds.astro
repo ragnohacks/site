@@ -1,0 +1,58 @@
+---
+const numClouds = 16;
+
+const cloudVariants = ["cloud.png", "cloud2.png"];
+const delayMin = 0;
+const delayMax = 5;
+
+let randDelay = [];
+let randVariant = [];
+
+for (let i = 0; i < numClouds; i++) {
+  randDelay.push(Math.random() * (delayMax - delayMin) + delayMin);
+  randVariant.push(
+    cloudVariants[Math.floor(Math.random() * cloudVariants.length)]
+  );
+}
+---
+
+<section class="h-0 relative w-full overflow-x-clip" aria-hidden="true">
+  <div
+    class="absolute left-0 min-w-full flex items-center justify-center h-64 -mt-32 z-30"
+  >
+    {
+      randDelay.map((delay, i) => (
+        <img
+          src={`/${randVariant[i]}`}
+          aria-hidden="true"
+          class="h-32 md:h-64 -mt-16 md:-mt-36 drop-shadow-md -ml-8 md:-ml-14 pointer-events-none select-none"
+          style={`animation: floating 5s ease-in-out infinite; animation-delay: ${delay}s;`}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  :root {
+    --cloud-displacement: -8px;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --cloud-displacement: -15px;
+    }
+  }
+
+  @keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(var(--cloud-displacement));
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+</style>

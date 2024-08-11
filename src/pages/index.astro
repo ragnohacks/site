@@ -8,6 +8,7 @@ import Sponsor from "../components/Sponsor.astro";
 import FAQ from "../components/FAQ.astro";
 import Important from "../components/Important.astro";
 import Overview from "../components/Overview.astro";
+import Clouds from "../components/Clouds.astro";
 ---
 
 <Layout title="Ragnohacks">
@@ -15,11 +16,15 @@ import Overview from "../components/Overview.astro";
     <Navbar />
     <Hero />
   </header>
+  <Clouds />
   <main>
     <Lore />
+    <Clouds />
     <Overview />
     <Important />
+    <Clouds />
     <Sponsor />
+    <Clouds />
     <FAQ />
   </main>
   <footer>

@@ -1,57 +1,92 @@
-<div class="bg-dino-neon-orange flex items-center justify-center flex-col overflow-clip pt-10 pb-24">
-    <div class="scrolling-text-container bg-white mb-4">
-        <div class="scrolling-text-wrapper overflow-hidden whitespace-nowrap h-20">
-          <h1 class="text-6xl font-bold text-dino-neon-orange scrolling-text inline-block">
-            IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT!
-          </h1>
-        </div>
-      </div>
-    <div class="rounded-lg p-4 flex flex-col-reverse gap-5 sm:flex-row">
-        <div>
-            <div class="text-5xl font-normal text-white text-center lg:text-6xl xl:text-7xl">IMPORTANT</div>
-            <div class="text-6xl font-extrabold text-white mb-4 text-center lg:text-7xl xl:text-8xl">DETAILS</div>
-            
-            <div class="bg-dino-dark-neon-orange text-white rounded-lg p-4 mb-4">
-                <div class="flex justify-between flex-col items-end xl:py-5">
-                    <div class="flex flex-row items-center">
-                        <div class="text-xl lg:text-2xl xl:text-5xl">TIME</div>
-                        <div class="border-r-4 rounded-full border-white mr-6 ml-4 flex-row h-36 relative -mb-24"></div>
-                        <div class="w-48 lg:text-lg lg:w-52 xl:text-2xl xl:w-80">September 27 (2PM) to<br>September 28 (2PM)</div>
-                    </div>
-                    <div class="flex flex-row items-center mt-5">
-                        <div class="text-xl lg:text-2xl xl:text-5xl">WHERE</div>
-                        <div class="ml-11 w-48 lg:w-52 xl:w-80 xl:text-2xl">Location Name<br>123 Address St, K2Y 14C<br>Ottawa, ON</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-            <div class="bg-gray-300 p-8 flex items-center justify-center rounded-xl h-64 sm:w-80 sm:h-auto lg:w-96">
-        </div>
+<section
+  class="bg-dino-neon-orange flex items-center justify-center flex-col overflow-clip pt-10 pb-32 md:pb-48"
+>
+  <div class="scrolling-text-container bg-white mb-8">
+    <div class="scrolling-text-wrapper overflow-hidden whitespace-nowrap h-20">
+      <h1
+        class="text-6xl font-bold text-dino-neon-orange scrolling-text inline-block uppercase"
+      >
+        Important! Important! Important! Important! Important! Important!
+        Important! Important! Important! Important! Important! Important!
+        Important! Important! Important! Important! Important! Important!
+        Important! Important! Important! Important! Important! Important!
+        Important! Important! Important! Important! Important! Important!
+        Important! Important! Important! Important! Important! Important!
+        Important! Important! Important! Important! Important! Important!
+        Important! Important! Important! Important! Important! Important!
+        Important! Important! Important! Important! Important! Important!
+        Important! Important! Important! Important! Important! Important!
+        Important! Important! Important!
+      </h1>
     </div>
-</div>
-<style>
-    @keyframes scroll-left {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        transform: translateX(-20%);
-      }
-    }
-  
-    .scrolling-text-wrapper {
-      display: flex;
-      align-items: center;
-    }
-  
-    .scrolling-text {
-      animation: scroll-left 50s linear infinite;
-    }
+  </div>
+  <div class="p-4 flex flex-col-reverse gap-12 sm:flex-row">
+    <div class="space-y-6">
+      <p
+        class="text-5xl font-normal text-white text-center lg:text-6xl xl:text-7xl uppercase tracking-wide"
+      >
+        Important
+        <br />
+        <span
+          class="text-6xl font-extrabold text-white mb-4 text-center lg:text-7xl xl:text-8xl"
+        >
+          details
+        </span>
+      </p>
 
-    @media (prefers-reduced-motion: reduce) {
-      .scrolling-text {
-        animation: none;
-      }
+      <div class="bg-dino-dark-neon-orange text-white rounded-lg p-6">
+        <table class="table-auto">
+          <tbody>
+            <tr>
+              <td
+                class="uppercase text-xl lg:text-2xl xl:text-4xl text-right pr-4"
+              >
+                Time
+              </td>
+              <td class="bg-white rounded-t-full w-1"></td>
+              <td class="pl-4 lg:text-lg xl:text-2xl">Late September (TBD)</td>
+            </tr>
+            <tr>
+              <td
+                class="uppercase text-xl lg:text-2xl xl:text-4xl text-right pr-4 pt-4"
+              >
+                Place
+              </td>
+              <td class="bg-white rounded-b-full w-1"></td>
+              <td class="pl-4 lg:text-lg xl:text-2xl pt-4">Ottawa, ON (TBD)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="bg-gray-300 p-8 flex items-center justify-center rounded-xl h-64 sm:w-80 sm:h-auto lg:w-96"
+    >
+    </div>
+  </div>
+</section>
+<style>
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
     }
-  </style>
-  
+    100% {
+      transform: translateX(-20%);
+    }
+  }
+
+  .scrolling-text-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .scrolling-text {
+    animation: scroll-left 75s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scrolling-text {
+      animation: none;
+    }
+  }
+</style>
