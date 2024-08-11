@@ -44,6 +44,12 @@ for (let i = 0; i < numClouds; i++) {
     }
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --cloud-displacement: 0px;
+    }
+  }
+
   @keyframes floating {
     0% {
       transform: translateY(0);
