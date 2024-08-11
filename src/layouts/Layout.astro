@@ -14,7 +14,7 @@ if (slug == "/") slug = "";
 ---
 
 <!doctype html>
-<html lang="en-ca" style="scroll-behavior: smooth;">
+<html lang="en-ca">
   <head>
     <meta charset="UTF-8" />
 
@@ -82,8 +82,18 @@ if (slug == "/") slug = "";
   </body>
 
   <style is:global>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       @apply text-dino-dark-teal font-inter font-medium;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
     }
 
     @font-face {
