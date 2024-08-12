@@ -16,8 +16,8 @@ const info = [
 
 <section class="">
   <div class="font-medium text-center bg-dino-teal py-4">
-    <p class="pt-4 pb-2 text-xs text-white sm:text-lg">
-      An event crafted with ♥ by students
+    <p class="pt-4 pb-2 text-xs text-white sm:text-lg" id="heart">
+      An event crafted with <span class="inline-block heart">♥</span> by students
     </p>
     <div class="text-white text-sm">
       <p>
@@ -80,6 +80,21 @@ const info = [
 
     .group:hover .group-hover\\:animate-fadein {
       z-index: 10;
+    }
+    @keyframes heartAnimation {
+      0% {
+      transform: scale(1);
+      }
+      50% {
+      transform: scale(1.2);
+      }
+      100% {
+      transform: scale(1);
+      }
+    }
+    
+    #heart:hover .heart {
+      animation: heartAnimation 1s 1;
     }
   </style>
 </section>
