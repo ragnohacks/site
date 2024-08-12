@@ -15,13 +15,30 @@ const info = [
 ---
 
 <section class="">
-  <div class="font-medium text-center bg-dino-teal">
-    <h1 class="pt-4 pb-2 text-xs text-white sm:text-lg">
-      Made with ♥ by students
-    </h1>
-  </div>
-  <!-- Hiding this till we have info -->
-  <!-- <div class="flex flex-row flex-wrap justify-center gap-5 px-1 pt-6 pb-20">
+  <div class="font-medium text-center bg-dino-teal py-4">
+    <p class="pt-4 pb-2 text-xs text-white sm:text-lg">
+      An event crafted with ♥ by students
+    </p>
+    <div class="text-white text-sm">
+      <p>
+        Our <a
+          href="https://github.com/ragnohacks/site"
+          target="_blank"
+          class="underline">website</a
+        > and <a href="https://hcb.hackclub.com/ragnohacks" class="underline"
+          >finances</a
+        > are open and transparent.
+      </p>
+      <p>
+        Inquiries? Contact us at <a
+          href="mailto:team@ragnohacks.ca"
+          target="_blank"
+          class="underline">team@ragnohacks.ca</a
+        >
+      </p>
+    </div>
+    <!-- Hiding this till we have info -->
+    <!-- <div class="flex flex-row flex-wrap justify-center gap-5 px-1 pt-6 pb-20">
       {
         info.map((item, index) => (
           <div class="relative group" key={index}>
@@ -42,24 +59,25 @@ const info = [
         ))
       }
     </div> -->
-  <!-- <div class="bg-dino-dark-teal h-7"></div> -->
+    <!-- <div class="bg-dino-dark-teal h-7"></div> -->
+  </div>
+
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 100;
+      }
+    }
+
+    .animate-fadeIn {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .group:hover .group-hover\\:animate-fadein {
+      z-index: 10;
+    }
+  </style>
 </section>
-
-<style>
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 100;
-    }
-  }
-
-  .animate-fadeIn {
-    animation: fadeIn 0.5s ease-in-out;
-  }
-
-  .group:hover .group-hover\\:animate-fadein {
-    z-index: 10;
-  }
-</style>
