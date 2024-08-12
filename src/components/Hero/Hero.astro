@@ -1,5 +1,9 @@
+---
+import Email from "./Email.astro";
+---
+
 <section
-  class="relative flex justify-center pt-16 overflow-hidden text-center md:pt-20 mb-24"
+  class="relative flex justify-center pt-16 overflow-hidden text-center md:pt-20 mb-32"
 >
   <!-- SEO -->
   <h1 class="w-0 h-0 p-0 m-0 overflow-hidden">Ragnohacks</h1>
@@ -205,20 +209,28 @@
         </svg>
       </div>
 
-      <div class="space-y-10">
+      <div class="space-y-6 xl:space-y-16 flex flex-col items-center">
         <div class="">
-          <h2 class="text-lg font-bold tracking-wide uppercase md:text-2xl">
+          <h2 class="text-lg font-bold tracking-wide uppercase lg:text-2xl">
             September 28-29 • Ottawa
           </h2>
-          <p class="text-xs md:text-lg">
+          <p class="text-xs lg:text-lg">
             Ottawa's first in-person high school hackathon
           </p>
         </div>
-        <button
+        <!-- <button
           class="px-12 py-2 text-2xl font-bold text-white uppercase rounded-full md:py-3 md:px-16 bg-dino-teal transition-transform hover:scale-110"
         >
           Register now!
-        </button>
+        </button> -->
+        <div class="space-y-1 flex-col flex items-center w-full px-4">
+          <div class="max-w-72 lg:max-w-96 w-full">
+            <p class="text-left pl-2 lg:pl-1 text-xs lg:text-base">
+              Sign up for updates
+            </p>
+            <Email />
+          </div>
+        </div>
       </div>
     </div>
 
