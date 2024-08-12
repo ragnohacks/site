@@ -1,3 +1,8 @@
+---
+import { Image } from "astro:assets";
+import logoImage from "../assets/logo.png";
+---
+
 <nav
   class="fixed top-0 left-0 right-0 z-50 flex justify-center text-white bg-dino-teal motion-safe:transition-all"
 >
@@ -6,8 +11,8 @@
       class="flex items-center justify-center space-x-4 md:space-x-4 grow md:grow-0 md:justify-start group"
       href="/"
     >
-      <img
-        src="/logo.png"
+      <Image
+        src={logoImage}
         alt="Ragnohacks Logo"
         class="block size-10 md:size-12 logo-shadow motion-safe:hover:scale-105 motion-safe:transition-transform"
       />
