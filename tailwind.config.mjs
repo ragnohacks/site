@@ -29,6 +29,9 @@ export default {
 				'70l': '80rem',
 				'30l': '30rem',
 			},
+			scale: {
+				'200': '1.84'
+			}
 		},
 	},
 	plugins: [],

@@ -235,7 +235,10 @@ import Email from "./Email.astro";
     </div>
 
     <div class="hidden py-6 md:block">
-      <img src="/hero/dino.svg" alt="Ragnohacks Dino" class="w-full p-5" />
+      <!-- reduced motion, not moving dino -->
+      <img src="/hero/dino.svg" alt="Ragnohacks Dino" class="w-full p-5 motion-safe:hidden" />
+      
+      <img src="/hero/dino.gif" alt="Ragnohacks Dino" class="scale-200 p-5 motion-reduce:hidden" />
     </div>
   </div>
   <div class="absolute bottom-0 left-0 right-0 top-16 md:top-20 -z-10">
