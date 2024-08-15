@@ -2,39 +2,67 @@
 const faqItems = [
   {
     title: ["What is a", "hackathon?"],
-    text: "A hackathon is an event where programmers, designers, project managers, and subject-matter experts work together on software projects.",
+    text: "Ragnohacks is a hackathon where 100 teens to build their wacky or janky project ideas—within 24 hours—to combat natural disasters.<br><br>Hacking is not breaking into banks, but being creative with how we solve problems!",
   },
   {
-    title: ["Who can", "participate?"],
-    text: "Students of any education level from anywhere in the world are eligible! Everyone must be 13 years or older to participate.",
+    title: ["Eligibility", ""],
+    text: 'Anyone in high school is welcome, even if you have never coded before! There\'s more to a hackathon than code.<br><br>If you\'re in middle school or a gap year student, check in with us before at <a href="mailto:team@ragnohacks.ca" target="_blank" class="underline">team@ragnohacks.ca</a>.',
   },
   {
-    title: ["Do I need", "experience?"],
-    text: "No prior experience is required to participate in a hackathon. It is open to beginners and experienced individuals alike.",
+    title: ["I have never coded before,", "can I join?"],
+    text: "Yes! You don't need any experience. You can be writing your first line of code at Ragnohacks, just bring an open mind! <br><br>We'll have workshops and mentors to help you along the way, and there's more to a hackathon project than just code!",
   },
   {
-    title: ["How much", "is it?"],
-    text: "There is no cost to participate in a hackathon. It is free for all attendees. You just need to bring your enthusiasm and creativity!",
+    title: ["Is this", "free?"],
+    text: 'There is no cost to participate in Ragnohacks thanks to our sponsors, and that includes food and swag!<br><br>If you need help paying for travel costs, the <a href="/travel" target="_blank" class="underline">Hack Club Gas Fund</a> is available if you\'re driving, taking public transit, or a train.',
+  },
+  {
+    title: ["Do I need", "a team?"],
+    text: "Nope! We encourage you to work with folks you've never met before. Although you can still be with your friends, we'll have team-building activities to help you find a team.<br><br>Teams can be up to 4 people.",
   },
   {
     title: ["What should", "I bring?"],
-    text: "You should bring your own laptop and any other tools or resources you may need for the hackathon.",
+    text: 'You\'ll need to bring a form of ID (more info soon), your laptop <span class="font-bold">with chargers</span>, a water bottle, sleeping bags, and anything else you need to pass the night.<br><br>Also bring your passion to learn and build something awesome!',
+  },
+  {
+    title: ["My parents are worried,", "what should I do?"],
+    text: 'We\'ll have 24/7 supervision by background-checked adults, with venue access limited to participants.<br><br>We\'ll be posting a parents\' guide soon. We\'re happy to answer any questions at <a href="mailto:team@ragnohacks.ca" target="_blank" class="underline">team@ragnohacks.ca</a>.',
+  },
+  {
+    title: ["What if I", "have more questions?"],
+    text: 'We\'re here to help! Email us at <a href="mailto:team@ragnohacks.ca" target="_blank" class="underline">team@ragnohacks.ca</a>.',
   },
 ];
 ---
 
 <section class="items-center" id="faq">
   <div class="mt-10 text-center px-4 md:px-10 max-w-6xl mx-auto py-7">
-    <h1 class="text-dino-teal text-7xl font-extrabold py-4">FAQ</h1>
-    <p>
-      <span class="text-xl">Got something that's not here?</span>
+    <h1 class="text-dino-teal text-6xl md:text-7xl font-extrabold py-4">FAQ</h1>
+    <p class="text-sm md:text-base">
+      <span class="text-lg md:text-xl">Got something that's not here?</span>
       <br />
-      Ask us through email: 
-      <a href="mailto:team@ragnohacks.ca" target="_blank" class="hover:underline">team@ragnohacks.ca</a>
+      Ask us through email:
+      <a
+        href="mailto:team@ragnohacks.ca"
+        target="_blank"
+        class="hover:underline">team@ragnohacks.ca</a
+      >
     </p>
 
-    <!-- Desktop -->
-    <div class="hidden grid-cols-3 gap-6 py-8 lg:grid">
+    <div class="grid text-left gap-6 md:gap-10 lg:grid-cols-2 py-12">
+      {
+        faqItems.map((item) => (
+          <div class="space-y-2">
+            <p class="text-lg md:text-xl border-b-2 border-b-dino-teal font-bold">
+              {item.title[0]} {item.title[1]}
+            </p>
+            <p class="text-sm md:text-base" set:html={item.text} />
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- <div class="hidden grid-cols-3 gap-6 py-8 lg:grid">
       {
         faqItems.map((item, i) => (
           // Auto-formatting doesn't work in this mess, beware
@@ -60,7 +88,6 @@ const faqItems = [
       }
     </div>
 
-    <!-- Mobile -->
     <div class="flex flex-col lg:hidden space-y-6 py-8 text-center">
       {faqItems.map((item, i) => (
         <div>
@@ -75,7 +102,7 @@ const faqItems = [
           </label>
         </div>
       ))}
-    </div>
+    </div> -->
   </div>
 </section>
 
