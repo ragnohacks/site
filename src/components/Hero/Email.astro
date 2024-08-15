@@ -72,7 +72,7 @@
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
       fill="currentColor"
-      class="size-5 lg:size-6 hidden"
+      class="size-5 lg:size-6 hidden text-dino-neon-orange"
       id="email-submit-error"
     >
       <path
@@ -83,21 +83,24 @@
   </label>
 </form>
 
-<script lang="ts">
-  const form = document.getElementById("email-form");
-  const submitElement = document.getElementById("email-submit");
+<script>
+  const form = document.getElementById("email-form") as HTMLFormElement;
+  const submitElement = document.getElementById(
+    "email-submit"
+  ) as HTMLButtonElement;
   const submitIcon = document.getElementById("email-submit-icon");
   const submitSuccess = document.getElementById("email-submit-success");
   const submitLoading = document.getElementById("email-submit-loading");
   const submitError = document.getElementById("email-submit-error");
 
-  const email = document.getElementById("email-input");
+  const email = document.getElementById("email-input") as HTMLInputElement;
 
   let loading = false;
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (loading) return;
+    if (!submitIcon || !submitSuccess || !submitLoading || !submitError) return;
 
     // Loading
     submitIcon.classList.add("hidden");
@@ -150,6 +153,8 @@
 
   email.addEventListener("input", () => {
     if (loading) return;
+    if (!submitIcon || !submitSuccess || !submitLoading || !submitError) return;
+
     submitIcon.classList.remove("hidden");
     submitSuccess.classList.add("hidden");
     submitError.classList.add("hidden");

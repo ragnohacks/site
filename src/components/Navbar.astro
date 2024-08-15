@@ -127,10 +127,12 @@ import logoImage from "../assets/logo.png";
   }
 </style>
 
-<script lang="ts">
+<script>
   const nav = document.querySelector("nav");
 
   window.addEventListener("scroll", () => {
+    if (!nav) return;
+
     let scrollPos = window.scrollY;
     if (scrollPos > 5) {
       nav.classList.add("shadow");

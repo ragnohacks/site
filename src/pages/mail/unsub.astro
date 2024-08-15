@@ -32,13 +32,14 @@ import Layout from "../../layouts/Layout.astro";
   if (searchParams.has("r")) {
     const url = searchParams.get("r");
     if (
+      !!url &&
       url.startsWith("https://postal.hackclub.com/subscribe/") &&
       url.endsWith("/8be763ZUDKetQTHFNFXIHZNg")
     ) {
       const resub = document.getElementById("resub") as HTMLAnchorElement;
       console.log(resub);
       resub.href = url;
-      resub.parentElement.classList.remove("hidden");
+      resub.parentElement?.classList.remove("hidden");
     }
   }
 </script>
