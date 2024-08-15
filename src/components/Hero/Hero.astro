@@ -2,9 +2,7 @@
 import Email from "./Email.astro";
 ---
 
-<section
-  class="relative flex justify-center pt-16 text-center md:pt-20 mb-32"
->
+<section class="relative flex justify-center pt-16 text-center md:pt-20 mb-32">
   <!-- SEO -->
   <h1 class="w-0 h-0 p-0 m-0 overflow-hidden">Ragnohacks</h1>
 
@@ -236,9 +234,17 @@ import Email from "./Email.astro";
 
     <div class="hidden py-6 md:block">
       <!-- reduced motion, not moving dino -->
-      <img src="/hero/dino.svg" alt="Ragnohacks Dino" class="w-full p-5 motion-safe:hidden" />
-      
-      <img src="/hero/dino.gif" alt="Ragnohacks Dino" class="scale-200 p-5 motion-reduce:hidden" />
+      <img
+        src="/hero/dino.svg"
+        alt="Ragnohacks Dino"
+        class="w-full p-5 motion-safe:hidden"
+      />
+
+      <img
+        src="/hero/dino.gif"
+        alt="Ragnohacks Dino"
+        class="scale-200 p-5 motion-reduce:hidden"
+      />
     </div>
   </div>
   <div class="absolute bottom-0 left-0 right-0 top-16 md:top-20 -z-10">
@@ -252,5 +258,9 @@ import Email from "./Email.astro";
     </div>
   </div>
 
-  <img src="/hero/buildings.svg" alt="buildings" class="absolute -bottom-32 -z-50">
+  <img
+    src="/hero/buildings.svg"
+    alt="buildings"
+    class="absolute -bottom-32 -z-50 opacity-50"
+  />
 </section>
