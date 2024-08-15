@@ -1,0 +1,44 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="You've unsubscribed - Ragnohacks">
+  <Fragment slot="head">
+    <meta name="robots" content="noindex" />
+  </Fragment>
+  <div
+    class="min-h-screen flex tracking-wide items-center justify-center bg-dino-teal md:bg-transparent"
+  >
+    <div class="bg-dino-teal text-white py-14 px-20 space-y-12 rounded-2xl">
+      <div class="space-y-3">
+        <h1 class="text-5xl font-semibold">Successfully unsubscribed</h1>
+        <p class="text-3xl">We're sad to see you go</p>
+      </div>
+      <div class="space-y-2">
+        <p class="hidden">
+          Didn't mean to unsubscribe?
+          <a href="" class="underline" id="resub">Re-subscribe me!</a>
+        </p>
+        <a class="text-xl hover:underline block" href="/"
+          >← Back to the Homepage</a
+        >
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const searchParams = new URLSearchParams(window.location.search);
+  if (searchParams.has("r")) {
+    const url = searchParams.get("r");
+    if (
+      url.startsWith("https://postal.hackclub.com/subscribe/") &&
+      url.endsWith("/8be763ZUDKetQTHFNFXIHZNg")
+    ) {
+      const resub = document.getElementById("resub") as HTMLAnchorElement;
+      console.log(resub);
+      resub.href = url;
+      resub.parentElement.classList.remove("hidden");
+    }
+  }
+</script>

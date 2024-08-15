@@ -1,0 +1,22 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="You're already subscribed - Ragnohacks">
+  <Fragment slot="head">
+    <meta name="robots" content="noindex" />
+  </Fragment>
+  <div
+    class="min-h-screen flex tracking-wide items-center justify-center bg-dino-teal md:bg-transparent"
+  >
+    <div class="bg-dino-teal text-white py-14 px-20 space-y-12 rounded-2xl">
+      <div class="space-y-3">
+        <h1 class="text-5xl font-semibold">You're already subscribed!</h1>
+        <p class="text-3xl">You're on our mailing list!</p>
+      </div>
+      <div>
+        <a class="text-xl hover:underline" href="/">← Back to the Homepage</a>
+      </div>
+    </div>
+  </div>
+</Layout>
