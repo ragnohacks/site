@@ -15,8 +15,8 @@ const info = [
 ---
 
 <section class="">
-  <div class="font-medium text-center bg-dino-teal py-4">
-    <p class="pt-4 pb-2 text-xs text-white sm:text-lg" id="heart">
+  <div class="font-medium text-center bg-dino-teal py-4 pb-6">
+    <p class="pt-2 pb-2 text-xs text-white sm:text-lg" id="heart">
       An event crafted with <span class="inline-block heart">♥</span> by students
     </p>
     <div class="text-white text-sm">
@@ -63,38 +63,38 @@ const info = [
     </div> -->
     <!-- <div class="bg-dino-dark-teal h-7"></div> -->
   </div>
-
-  <style>
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 100;
-      }
-    }
-
-    .animate-fadeIn {
-      animation: fadeIn 0.5s ease-in-out;
-    }
-
-    .group:hover .group-hover\\:animate-fadein {
-      z-index: 10;
-    }
-    @keyframes heartAnimation {
-      0% {
-      transform: scale(1);
-      }
-      50% {
-      transform: scale(1.2);
-      }
-      100% {
-      transform: scale(1);
-      }
-    }
-    
-    #heart:hover .heart {
-      animation: heartAnimation 1s 1;
-    }
-  </style>
 </section>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 100;
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .group:hover .group-hover\\:animate-fadein {
+    z-index: 10;
+  }
+  @keyframes heartAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  #heart:hover .heart {
+    animation: heartAnimation 1s 1;
+  }
+</style>
