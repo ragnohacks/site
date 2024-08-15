@@ -1,34 +1,55 @@
+---
+const translations = [
+  "¡IMPORTANTE!",
+  "महत्वपूर्ण!",
+  "MAHALAGA!",
+  "গুরুত্বপূর্ণ!",
+  "ВАЖНО!",
+  "ਮਹੱਤਵਪੂਰਨ!",
+  "IMPORTANTE!",
+  "WICHTIG!",
+  "PENTING!",
+  "중요!",
+  "ముఖ్యమైన!",
+  "முக்கியம்!",
+  "IMPORTANT!",
+  "महत्त्वाचे!",
+  "ÖNEMLİ!",
+  "Nhân!",
+  "મહત્વપૂર્ણ!",
+  "WAŻNE!",
+  "ВАЖЛИВО!",
+  "IMPORTANTE!",
+  "重要!",
+  "BELANGRIJK!",
+];
+---
+
 <section
   class="bg-dino-neon-orange flex items-center justify-center flex-col overflow-clip pt-10 pb-32 md:pb-48"
 >
   <div class="scrolling-text-container bg-white mb-8">
-    <div class="scrolling-text-wrapper overflow-hidden whitespace-nowrap h-20">
+    <div class="scrolling-text-wrapper overflow-hidden whitespace-nowrap py-2">
       <h1
-        class="text-6xl font-bold text-dino-neon-orange scrolling-text inline-block uppercase"
+        class="text-4xl font-bold text-dino-neon-orange scrolling-text inline-block uppercase whitespace-pre"
       >
-        Important! Important! Important! Important! Important! Important!
-        Important! Important! Important! Important! Important! Important!
-        Important! Important! Important! Important! Important! Important!
-        Important! Important! Important! Important! Important! Important!
-        Important! Important! Important! Important! Important! Important!
-        Important! Important! Important! Important! Important! Important!
-        Important! Important! Important! Important! Important! Important!
-        Important! Important! Important! Important! Important! Important!
-        Important! Important! Important! Important! Important! Important!
-        Important! Important! Important! Important! Important! Important!
-        Important! Important! Important!
+        {translations.map((word) => word + "  •  ")}
+        {translations.map((word) => word + "  •  ")}
+        {translations.map((word) => word + "  •  ")}
+        {translations.map((word) => word + "  •  ")}
+        {translations.map((word) => word + "  •  ")}
       </h1>
     </div>
   </div>
   <div class="p-4 flex flex-col-reverse gap-12 sm:flex-row">
     <div class="space-y-6">
       <p
-        class="text-5xl font-normal text-white text-center lg:text-6xl xl:text-7xl uppercase tracking-wide"
+        class="text-5xl text-white text-center lg:text-6xl xl:text-7xl uppercase tracking-wide font-bold"
       >
-        Important
+        Event
         <br />
         <span
-          class="text-6xl font-extrabold text-white mb-4 text-center lg:text-7xl xl:text-8xl"
+          class="text-5xl text-white mb-4 text-center lg:text-6xl xl:text-7xl"
         >
           details
         </span>
