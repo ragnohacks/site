@@ -1,0 +1,71 @@
+---
+import { Image } from "astro:assets";
+import ssiCanadaImage from "../assets/sponsor/ssi-canada.png";
+---
+
+<section
+  class="overflow-x-clip flex justify-center flex-col bg-dino-teal py-24 pb-32 md:py-44 md:pb-80"
+  id="sponsors"
+>
+  <div class="text-center px-5 space-y-12">
+    <div class="uppercase">
+      <h2
+        class="text-4xl text-teal-50 mt-5 lg:text-5xl font-bold tracking-wide"
+      >
+        Sponsor a
+      </h2>
+      <h1 class="text-7xl font-adumu text-white lg:text-8xl">
+        Magical weekend
+      </h1>
+    </div>
+
+    <div class="space-y-6">
+      <p class="text-white text-2xl">
+        Help make Ottawa’s first in-person high school hackathon happen!
+      </p>
+      <div class="text-white flex flex-col items-center space-y-1">
+        <a
+          href="mailto:team@ragnohacks.ca"
+          target="_blank"
+          class="px-12 py-1 text-lg text-white rounded-full md:py-2 md:px-16 bg-dino-neon-orange motion-safe:transition-all motion-safe:hover:scale-105 motion-safe:hover:shadow"
+        >
+          Send us an email!
+        </a>
+        <a
+          href="mailto:team@ragnohacks.ca"
+          target="_blank"
+          class="text-teal-50 text-sm">team@ragnohacks.ca</a
+        >
+      </div>
+    </div>
+    <div class="flex flex-col items-center text-white">
+      <p class="py-2">Thank you to our sponsors!</p>
+      <div
+        class="max-w-6xl bg-white w-full flex flex-col items-center p-12 py-20 rounded-3xl space-y-12"
+      >
+        <a
+          href="https://www.ssicanada.com/"
+          target="_blank"
+          class="motion-safe:hover:scale-105 motion-safe:transition-all h-52 flex"
+        >
+          <Image
+            src={ssiCanadaImage}
+            alt="SSi Canada"
+            class="max-w-full max-h-full object-contain grow"
+          />
+        </a>
+        <a
+          href="https://dorahacks.io/"
+          target="_blank"
+          class="motion-safe:hover:scale-105 motion-safe:transition-all h-14 flex"
+        >
+          <img
+            src="/sponsor/dorahacks.svg"
+            alt="DoraHacks"
+            class="max-w-full max-h-full object-contain grow"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,158 @@
+<form
+  action="https://postal.hackclub.com/subscribe"
+  method="POST"
+  accept-charset="utf-8"
+  id="email-form"
+  class="border-[3px] lg:border-4 rounded-xl flex border-dino-dark-teal text-dino-dark-teal px-2 lg:px-3 space-x-2 bg-white"
+>
+  <input
+    type="email"
+    name="email"
+    id="email-input"
+    placeholder="myemail@example.com"
+    class="focus:outline-none outline-none bg-transparent h-8 lg:h-10 placeholder:text-dino-dark-teal/70 grow overflow-x-scroll text-sm lg:text-base"
+    required
+  />
+  <div class="hidden">
+    <label for="hp">HP</label><br />
+    <input type="text" name="hp" id="hp" />
+  </div>
+  <input type="hidden" name="list" value="8be763ZUDKetQTHFNFXIHZNg" />
+  <input type="hidden" name="subform" value="yes" />
+  <input type="submit" name="submit" id="email-submit" class="hidden peer" />
+  <label
+    for="email-submit"
+    class="h-8 lg:h-10 flex items-center cursor-pointer peer-disabled:cursor-auto"
+  >
+    <!-- Submit -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="size-5 lg:size-6"
+      id="email-submit-icon"
+    >
+      <path
+        d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z"
+      ></path>
+    </svg>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="size-5 lg:size-6 hidden"
+      id="email-submit-success"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
+        clip-rule="evenodd"></path>
+    </svg>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      class="animate-spin size-5 lg:size-6 hidden"
+      id="email-submit-loading"
+    >
+      <circle
+        class="opacity-25"
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="currentColor"
+        stroke-width="4"></circle>
+      <path
+        class="opacity-75"
+        fill="currentColor"
+        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+      ></path>
+    </svg>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="size-5 lg:size-6 hidden"
+      id="email-submit-error"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+        clip-rule="evenodd"></path>
+    </svg>
+  </label>
+</form>
+
+<script lang="ts">
+  const form = document.getElementById("email-form");
+  const submitElement = document.getElementById("email-submit");
+  const submitIcon = document.getElementById("email-submit-icon");
+  const submitSuccess = document.getElementById("email-submit-success");
+  const submitLoading = document.getElementById("email-submit-loading");
+  const submitError = document.getElementById("email-submit-error");
+
+  const email = document.getElementById("email-input");
+
+  let loading = false;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (loading) return;
+
+    // Loading
+    submitIcon.classList.add("hidden");
+    submitSuccess.classList.add("hidden");
+    submitError.classList.add("hidden");
+    submitLoading.classList.remove("hidden");
+    loading = true;
+    submitElement.disabled = true;
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
+
+    fetch("/api/subscribe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email: email.value }),
+      signal: controller.signal,
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          // Success
+          submitIcon.classList.add("hidden");
+          submitSuccess.classList.remove("hidden");
+          submitError.classList.add("hidden");
+          submitLoading.classList.add("hidden");
+          email.value = "";
+        } else {
+          // Error
+          submitIcon.classList.add("hidden");
+          submitSuccess.classList.add("hidden");
+          submitError.classList.remove("hidden");
+          submitLoading.classList.add("hidden");
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        // Error
+        submitIcon.classList.add("hidden");
+        submitSuccess.classList.add("hidden");
+        submitError.classList.remove("hidden");
+        submitLoading.classList.add("hidden");
+      });
+
+    clearTimeout(timeout);
+    loading = false;
+    submitElement.disabled = false;
+  });
+
+  email.addEventListener("input", () => {
+    if (loading) return;
+    submitIcon.classList.remove("hidden");
+    submitSuccess.classList.add("hidden");
+    submitError.classList.add("hidden");
+    submitLoading.classList.add("hidden");
+  });
+</script>

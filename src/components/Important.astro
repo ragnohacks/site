@@ -1,0 +1,118 @@
+---
+const translations = [
+  "¡IMPORTANTE!",
+  "महत्वपूर्ण!",
+  "MAHALAGA!",
+  "গুরুত্বপূর্ণ!",
+  "ВАЖНО!",
+  "ਮਹੱਤਵਪੂਰਨ!",
+  "IMPORTANTE!",
+  "WICHTIG!",
+  "PENTING!",
+  "중요!",
+  "ముఖ్యమైన!",
+  "முக்கியம்!",
+  "IMPORTANT!",
+  "महत्त्वाचे!",
+  "ÖNEMLİ!",
+  "Nhân!",
+  "મહત્વપૂર્ણ!",
+  "WAŻNE!",
+  "ВАЖЛИВО!",
+  "IMPORTANTE!",
+  "重要!",
+  "BELANGRIJK!",
+];
+---
+
+<section
+  class="bg-dino-neon-orange flex items-center justify-center flex-col overflow-clip pt-10 pb-32 md:pb-48"
+>
+  <div class="scrolling-text-container bg-white mb-8">
+    <div class="scrolling-text-wrapper overflow-hidden whitespace-nowrap py-2">
+      <h1
+        class="text-4xl font-bold text-dino-neon-orange scrolling-text inline-block uppercase whitespace-pre"
+      >
+        {translations.map((word) => word + "  •  ")}
+        {translations.map((word) => word + "  •  ")}
+        {translations.map((word) => word + "  •  ")}
+        {translations.map((word) => word + "  •  ")}
+        {translations.map((word) => word + "  •  ")}
+      </h1>
+    </div>
+  </div>
+  <div class="p-4 flex flex-col-reverse gap-12 sm:flex-row">
+    <div class="space-y-6">
+      <p
+        class="text-5xl text-white text-center lg:text-6xl xl:text-7xl uppercase tracking-wide font-bold"
+      >
+        Event
+        <br />
+        <span
+          class="text-5xl text-white mb-4 text-center lg:text-6xl xl:text-7xl"
+        >
+          details
+        </span>
+      </p>
+
+      <div class="bg-dino-dark-neon-orange text-white rounded-lg p-6">
+        <table class="table-auto">
+          <tbody>
+            <tr>
+              <td
+                class="uppercase text-xl lg:text-2xl xl:text-4xl text-right pr-4 font-bold"
+              >
+                Time
+              </td>
+              <td class="bg-white rounded-t-full w-1"></td>
+              <td class="pl-4 lg:text-lg xl:text-2xl">Late September (TBD)</td>
+            </tr>
+            <tr>
+              <td
+                class="uppercase text-xl lg:text-2xl xl:text-4xl text-right pr-4 pt-4 font-bold"
+              >
+                Place
+              </td>
+              <td class="bg-white rounded-b-full w-1"></td>
+              <td class="pl-4 lg:text-lg xl:text-2xl pt-4">Ottawa, ON (TBD)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div
+      class="bg-gray-200 p-8 flex items-center justify-center rounded-xl h-64 sm:w-80 sm:h-auto lg:w-96"
+    >
+      <p
+        class="uppercase text-dino-text text-bold text-4xl -rotate-12 tracking-wide"
+      >
+        Soon<sup>tm</sup>
+      </p>
+    </div>
+  </div>
+</section>
+<style>
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-20%);
+    }
+  }
+
+  .scrolling-text-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .scrolling-text {
+    animation: scroll-left 200s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scrolling-text {
+      animation: none;
+    }
+  }
+</style>

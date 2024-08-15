@@ -1,0 +1,140 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const description =
+  "Ottawa's first in-person high school hackathon. Coming this fall...";
+const banner = "/banner.png";
+
+const { url } = Astro.request;
+let slug = new URL(url).pathname;
+if (slug == "/") slug = "";
+---
+
+<!doctype html>
+<html lang="en-ca">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content=`https://ragnohacks.ca${slug}` />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={banner} />
+
+    <meta name="twitter:description" content={description} />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content=`https://ragnohacks.ca/${slug}` />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={banner} />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/favicons/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="/favicons/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#00aba9" />
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+
+  <style is:global>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      @apply text-dino-dark-teal font-inter font-medium;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @font-face {
+      font-family: "Adumu";
+      src:
+        url("/fonts/Adumu.woff2") format("woff2"),
+        url("/fonts/Adumu.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: block;
+    }
+
+    @tailwind utilities;
+    @layer utilities {
+      .font-thin {
+        font-variation-settings: "wght" 100;
+      }
+      .font-extralight {
+        font-variation-settings: "wght" 200;
+      }
+      .font-light {
+        font-variation-settings: "wght" 300;
+      }
+      .font-normal {
+        font-variation-settings: "wght" 400;
+      }
+      .font-medium {
+        font-variation-settings: "wght" 500;
+      }
+      .font-semibold {
+        font-variation-settings: "wght" 600;
+      }
+      .font-bold {
+        font-variation-settings: "wght" 700;
+      }
+      .font-extrabold {
+        font-variation-settings: "wght" 800;
+      }
+      .font-black {
+        font-variation-settings: "wght" 900;
+      }
+    }
+  </style>
+</html>
