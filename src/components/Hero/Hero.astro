@@ -1,5 +1,6 @@
 ---
 import Email from "./Email.astro";
+// const svg = "frame absolute inset-0 w-full h-full right-0 opacity-0"
 ---
 
 <section class="relative flex justify-center pt-16 text-center md:pt-20 mb-32">
@@ -245,23 +246,88 @@ import Email from "./Email.astro";
         alt="Ragnohacks Dino"
         class="scale-200 p-5 motion-reduce:hidden"
       />
+
+      <!-- <div class="">
+        <img src="/hero/dino-gifs/Dino1-1.svg" class={svg} />
+        <img src="/hero/dino-gifs/Dino1-2.svg" class={svg} />
+        <img src="/hero/dino-gifs/Dino1-3.svg" class={svg} />
+        <img src="/hero/dino-gifs/Dino1-4.svg" class={svg} />
+        <img src="/hero/dino-gifs/Dino1-5.svg" class={svg} />
+        <img src="/hero/dino-gifs/Dino1-6.svg" class={svg} />
+        <img src="/hero/dino-gifs/Dino1-7.svg" class={svg} />
+        <img src="/hero/dino-gifs/Dino1-8.svg" class={svg} />
+        <img src="/hero/dino-gifs/Dino1-9.svg" class={svg} />
+        <img src="/hero/dino-gifs/Dino1-10.svg" class={svg} />
+      </div> -->
     </div>
   </div>
   <div class="absolute bottom-0 left-0 right-0 top-16 md:top-20 -z-10">
     <div class="flex justify-center w-full h-full">
       <div
-        class="grid w-full h-full max-w-md grid-cols-1 grid-rows-4 gap-5 py-6 pt-10 mx-4 md:max-w-6xl md:pt-6 md:grid-rows-2 md:grid-cols-3"
+      class="grid w-full h-full max-w-md grid-cols-1 grid-rows-4 gap-5 py-6 pt-10 mx-4 md:max-w-6xl md:pt-6 md:grid-rows-2 md:grid-cols-3"
       >
-        <div class="w-full h-full bg-gray-100 md:col-span-2 rounded-3xl"></div>
-        <div class="row-span-2 bg-gray-100 md:row-span-2 rounded-3xl"></div>
-      </div>
+      <div class="w-full h-full bg-gray-100 md:col-span-2 rounded-3xl"></div>
+      <div class="row-span-2 bg-gray-100 md:row-span-2 rounded-3xl"></div>
     </div>
   </div>
+</div>
 
-  <img
-    src="/hero/buildings.svg"
-    aria-hidden="true"
-    alt="Buildings in the background"
-    class="absolute -bottom-32 -z-50 opacity-50"
-  />
+<img
+src="/hero/buildings.svg"
+aria-hidden="true"
+alt="Buildings in the background"
+class="absolute -bottom-32 -z-50 opacity-50"
+/>
 </section>
+
+<!-- <style>
+@keyframes animateFrames {
+  0% { opacity: 1; }
+  /* 10% { opacity: 0; }
+  20% { opacity: 1; } */
+  /* 30% { opacity: 0; }
+  40% { opacity: 1 }
+  50% { opacity: 0 }
+  60% { opacity: 1 }
+  70% { opacity: 0 }
+  80% { opacity: 1 } */
+  50% { opacity: 0 }
+  /* Continue for all frames */
+  100% { opacity: 1; }
+}
+
+  .frame {
+    animation: animateFrames 0.7s steps(1) infinite;
+  }
+
+  .frame:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .frame:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .frame:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+  .frame:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+  .frame:nth-child(5) {
+    animation-delay: 0.4s;
+  }
+  .frame:nth-child(6) {
+    animation-delay: 0.5s;
+  }
+  .frame:nth-child(7) {
+    animation-delay: 0.6s;
+  }
+  .frame:nth-child(8) {
+    animation-delay: 0.7s;
+  }
+  .frame:nth-child(9) {
+    animation-delay: 0.8s;
+  }
+  .frame:nth-child(10) {
+    animation-delay: 0.9s;
+  }
+</style> -->
