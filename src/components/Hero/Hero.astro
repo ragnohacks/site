@@ -259,25 +259,75 @@ import Email from "./Email.astro";
         <img src="/hero/dino-gifs/Dino1-9.svg" class={svg} />
         <img src="/hero/dino-gifs/Dino1-10.svg" class={svg} />
       </div> -->
+
+      <!-- <div class="px-10 py-10">
+        <div class="relative">
+
+          <g id="lines" class="line" class="absolute top-0 left-0">
+            <svg
+              width="213"
+              height="175"
+              viewBox="0 0 213 175"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22.5482 79.2318C23.5043 75.9342 27.4232 74.5593 30.23 76.5366L151.115 161.696C156.173 165.259 153.181 173.219 147.027 172.568L5.93879 157.629C2.84295 157.301 0.796106 154.254 1.66303 151.264L22.5482 79.2318Z"
+                fill="#FCA646"></path>
+              <path
+                d="M124.816 54.1365C126.772 52.7365 129.513 53.3678 130.66 55.4826L174.714 136.721C177.107 141.133 172.233 145.925 167.862 143.459L83.566 95.8973C79.1073 93.3817 78.7689 87.0874 82.9322 84.1082L124.816 54.1365Z"
+                fill="#FCA646"></path>
+              <path
+                d="M209.464 0.201432C211.315 0.0959938 212.817 1.67805 212.617 3.52119L199.015 128.49C198.462 133.572 191.538 134.646 189.471 129.97L137.503 12.4237C135.809 8.59081 138.466 4.24563 142.65 4.00731L209.464 0.201432Z"
+                fill="#FCA646"></path>
+            </svg>
+          </g>
+
+          <img
+            src="/hero/dino-gifs/dino-body.svg"
+            alt="Dinosaur Body"
+            class="w-full"
+          />
+
+          <div
+            class="absolute inset-0 top-40 flex justify-between items-center px-4 mr-9 -ml-5"
+          >
+
+            <img
+              src="/hero/dino-gifs/dino-left-arm.svg"
+              alt="Left Arm"
+              class="w-1/3"
+              id="left-arm"
+              />
+
+              <img
+              src="/hero/dino-gifs/dino-right-arm.svg"
+              alt="Right Arm"
+              class="w-1/3"
+              id="right-arm"
+            />
+          </div>
+        </div>
+      </div> -->
     </div>
   </div>
   <div class="absolute bottom-0 left-0 right-0 top-16 md:top-20 -z-10">
     <div class="flex justify-center w-full h-full">
       <div
-      class="grid w-full h-full max-w-md grid-cols-1 grid-rows-4 gap-5 py-6 pt-10 mx-4 md:max-w-6xl md:pt-6 md:grid-rows-2 md:grid-cols-3"
+        class="grid w-full h-full max-w-md grid-cols-1 grid-rows-4 gap-5 py-6 pt-10 mx-4 md:max-w-6xl md:pt-6 md:grid-rows-2 md:grid-cols-3"
       >
-      <div class="w-full h-full bg-gray-100 md:col-span-2 rounded-3xl"></div>
-      <div class="row-span-2 bg-gray-100 md:row-span-2 rounded-3xl"></div>
+        <div class="w-full h-full bg-gray-100 md:col-span-2 rounded-3xl"></div>
+        <div class="row-span-2 bg-gray-100 md:row-span-2 rounded-3xl"></div>
+      </div>
     </div>
   </div>
-</div>
 
-<img
-src="/hero/buildings.svg"
-aria-hidden="true"
-alt="Buildings in the background"
-class="absolute -bottom-32 -z-50 opacity-50"
-/>
+  <img
+    src="/hero/buildings.svg"
+    aria-hidden="true"
+    alt="Buildings in the background"
+    class="absolute -bottom-32 -z-50 opacity-50"
+  />
 </section>
 
 <!-- <style>
@@ -330,4 +380,53 @@ class="absolute -bottom-32 -z-50 opacity-50"
   .frame:nth-child(10) {
     animation-delay: 0.9s;
   }
+</style> -->
+<!-- <style>
+#left-arm {
+  animation: wave-right 0.5s infinite alternate linear;
+  transform-origin: 20% 20%;
+}
+#right-arm {
+  animation: wave-left 0.5s infinite alternate linear;
+  transform-origin: 20% 20%;
+}
+
+#left-arm {
+  transform-origin: 100% 100%;
+}
+
+#right-arm {
+  transform-origin: 0% 100%;
+}
+
+@keyframes wave-left {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-50deg);
+  }
+}
+
+@keyframes wave-right {
+  0% {
+    transform: rotate(-50deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.line {
+  animation: pulse 0.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    height: 10px;
+  }
+  100% {
+    height: 40px;
+  }
+}
+
 </style> -->
