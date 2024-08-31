@@ -67,9 +67,9 @@ import logoImage from "../assets/logo.png";
     <div
       class="items-center justify-end hidden space-x-4 text-xl font-bold text-white uppercase md:flex sm:space-x-6 sm:justify-center md:space-x-8 grow"
     >
-      <a href="#about" class="hover:underline">About</a>
-      <a href="#sponsors" class="hover:underline">Sponsors</a>
-      <a href="#faq" class="hover:underline">FAQ</a>
+      <a href="#about" class="anim-underline">About</a>
+      <a href="#sponsors" class="anim-underline">Sponsors</a>
+      <a href="#faq" class="anim-underline">FAQ</a>
     </div>
 
     <div class="flex items-center justify-end space-x-12">
@@ -124,6 +124,35 @@ import logoImage from "../assets/logo.png";
 <style>
   .logo-shadow {
     filter: drop-shadow(rgba(0, 0, 0, 0.5) 4px 3px 1px);
+  }
+
+  .anim-underline {
+    position: relative;
+  }
+
+  .anim-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0.2rem;
+    height: 0.075rem;
+    background-color: white;
+    width: 105%;
+    transition-duration: 0.15s;
+    transition-property: transform;
+    transform-origin: bottom left;
+    transition-timing-function: ease-in-out;
+    transform: scaleX(0);
+  }
+
+  .anim-underline:hover::after {
+    transform: scaleX(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .anim-underline::after {
+      transition-duration: 0s;
+    }
   }
 </style>
 
