@@ -232,7 +232,7 @@ import Email from "./Email.astro";
       </div>
     </div>
 
-    <div class="hidden py-6 md:block overflow-hidden">
+    <div class="hidden py-6 md:block overflow-hidden transition-transform duration-1000" id="dino">
       <!-- reduced motion, not moving dino -->
       <img
         src="/hero/dino.svg"
@@ -265,3 +265,23 @@ import Email from "./Email.astro";
     class="absolute -bottom-32 -z-50 opacity-50"
   />
 </section>
+
+<script lang="ts">
+  const dino = document.getElementById("dino");
+
+  window.addEventListener("scroll", () => {
+    const preferred = window.matchMedia('(prefers-reduced-motion: reduce)');
+    console.log(preferred.matches)
+    if (preferred.matches) {
+      // User prefers reduced motion, do nothing
+      return;
+    }
+
+    let scrollPos = window.scrollY;
+    if (scrollPos > 5) {
+      dino.classList.add("-rotate-2");
+    } else {
+      dino.classList.remove("-rotate-2");
+    }
+    });
+</script>
