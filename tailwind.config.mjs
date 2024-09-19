@@ -37,6 +37,9 @@ export default {
       maxHeight: {
         "text": "92%",
       },
+      borderWidth: {
+        // "3": "3px"
+      }
     },
   },
   plugins: [],
