@@ -1,48 +1,89 @@
 ---
 const cards = [
   {
+    imgsrc: "",
     text: "ragnohacks is a 10 hour long time ipajsefpij apsejf piasjefpi jaseipfjp ijaseif",
-    position: "sm:top-24 sm:right-10 lg:right-44 xl:top-24 xl:right-24 rotate-3",
+    position:
+      "sm:top-24 sm:right-10 lg:right-44 xl:top-24 xl:right-24 rotate-3",
+    card: true,
   },
   {
+    imgsrc: "/placeholder.jpg",
+    position:
+      "sm:top-24 sm:right-10 lg:right-44 xl:top-24 xl:right-24 rotate-3",
+    card: false,
+  },
+  {
+    imgsrc: "",
     text: "ragnohacks is a 10 hour long time ipajsefpij apsejf piasjefpi jaseipfjp ijaseif",
     position: "sm:top-24 sm:left-10 lg:left-44 xl:top-24 xl:left-24 -rotate-6",
+    card: true,
   },
   {
+    imgsrc: "",
     text: "ragnohacks is a 10 hour long time ipajsefpij apsejf piasjefpi jaseipfjp ijaseif",
     position: "sm:top-96 sm:left-10 lg:left-44 xl:top-96 xl:left-72 rotate-6",
+    card: true,
   },
   {
+    imgsrc: "",
     text: "ragnohacks is a 10 hour long time ipajsefpij apsejf piasjefpi jaseipfjp ijaseif",
-    position: "sm:top-96 sm:right-10 lg:right-44 xl:top-96 xl:right-72 -rotate-6",
+    position:
+      "sm:top-96 sm:right-10 lg:right-44 xl:top-96 xl:right-72 -rotate-6",
+    card: true,
   },
 ];
 ---
 
-<section class="bg-dino-dark-teal h-screen relative">
-  <div class="hidden sm:block">
-    {
-      cards.map((cards) => (
-        <div
-          class={`border-black border-3 rounded-md bg-white p-4 text-md sm:text-md md:text-xl sm:w-64 md:w-80 text-center absolute transition-transform hover:rotate-0 ${cards.position}`}
-        >
-          <h1 class="border-2 border-dino-dark-teal p-5 text-black">
-            {cards.text}
-          </h1>
-        </div>
-      ))
-    }
-  </div>
-  <!-- mobile version -->
-  <div class="sm:hidden flex flex-col gap-5 items-center pt-10">
-    {cards.map((cards) => (
-        <div
-          class={`border-black border-3 rounded-md bg-white p-4 w-64 text-center transition-transform hover:rotate-0`}
-        >
-          <h1 class="border-2 border-dino-dark-teal p-5 text-black">
-            {cards.text}
-          </h1>
-        </div>
-    ))}
+<section class="bg-dino-dark-teal h-svh">
+  <div class="max-w-6xl relative mx-auto">
+    <div class="hidden sm:block">
+      {
+        cards.map((cards) => (
+          <div>
+            {cards.card ? (
+              <div
+                class={`border-black border-3 rounded-md bg-white p-4 text-md sm:text-md md:text-xl sm:w-64 md:w-80 text-center absolute transition-transform hover:rotate-0 ${cards.position}`}
+              >
+                <h1 class="border-2 border-dino-dark-teal p-5 text-black">
+                  {cards.text}
+                </h1>
+              </div>
+            ) : (
+              <div>
+                <img
+                  src={cards.imgsrc}
+                  alt=""
+                  srcset=""
+                  class={`w-52 absolute ${cards.position}`}
+                />
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </div>
+    <!-- mobile version -->
+    <div class="sm:hidden flex flex-col gap-5 items-center pt-10">
+      {
+        cards.map((card) => (
+          <div>
+            {card.card ? (
+              <div
+                class={`border-black border-3 rounded-md bg-white p-4 w-64 text-center transition-transform hover:rotate-0`}
+              >
+                <h1 class="border-2 border-dino-dark-teal p-5 text-black">
+                  {card.text}
+                </h1>
+              </div>
+            ) : (
+              <div>
+                <img src={card.imgsrc} alt="" srcset="" class="px-5" />
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </div>
   </div>
 </section>
