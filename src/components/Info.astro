@@ -4,108 +4,88 @@ const cards = [
     imgsrc: "",
     text: "ragnohacks is a 10 hour long time ipajsefpij apsejf piasjefpi jaseipfjp ijaseif",
     position: "",
-    //   "sm:top-24 sm:right-10 lg:right-44 xl:top-24 xl:right-24 rotate-3",
     card: true,
   },
   {
     imgsrc: "/placeholder.jpg",
     position: "",
-    //   "sm:top-24 sm:right-10 lg:right-44 xl:top-24 xl:right-24 rotate-3",
     card: false,
   },
   {
     imgsrc: "/placeholder.jpg",
     position: "",
-    //   "sm:top-24 sm:right-10 lg:right-44 xl:top-24 xl:right-24 rotate-3",
     card: false,
   },
   {
     imgsrc: "",
     text: "ragnohacks is a 10 hour long time ipajsefpij apsejf piasjefpi jaseipfjp ijaseif",
-    position: "", //"sm:top-24 sm:left-10 lg:left-44 xl:top-24 xl:left-24 -rotate-6",
-    card: true,
-  },
-  {
-    imgsrc: "",
-    text: "ragnohacks is a 10 hour long time ipajsefpij apsejf piasjefpi jaseipfjp ijaseif",
-    position: "", //"sm:top-96 sm:left-10 lg:left-44 xl:top-96 xl:left-72 rotate-6",
+    position: "",
     card: true,
   },
   {
     imgsrc: "",
     text: "ragnohacks is a 10 hour long time ipajsefpij apsejf piasjefpi jaseipfjp ijaseif",
     position: "",
-    //   "sm:top-96 sm:right-10 lg:right-44 xl:top-96 xl:right-72 -rotate-6",
+    card: true,
+  },
+  {
+    imgsrc: "",
+    text: "ragnohacks is a 10 hour long time ipajsefpij apsejf piasjefpi jaseipfjp ijaseif",
+    position: "",
     card: true,
   },
 ];
----
 
+// Function to generate random position and rotation
+const generateRandomTransform = () => {
+  const x = Math.floor(Math.random() * 80) - 50; // Random x between -10 and 10
+  const y = Math.floor(Math.random() * 20) - 10; // Random y between -10 and 10
+  const rotation = Math.floor(Math.random() * 20) - 10; // Random rotation between -10 and 10
+  return `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
+};
+
+const cardContainer =
+  "rounded-md p-4 text-md sm:text-md md:text-xl sm:w-64 md:w-80 text-center transition-transform hover:rotate-0 bg-white";
+---
 <section class="bg-dino-dark-teal h-svh">
   <div class="max-w-6xl relative mx-auto">
     <div class="hidden sm:block">
-      {
-        cards.map((card, index) => {
-          if (index % 2 === 0) {
-            const nextCard = cards[index + 1];
-
-            const isEvenGroup = Math.floor(index / 2) % 2 === 0; // Check if it's an even group
-
-            return (
-              <div class={`flex gap-4 mb-4 justify-center`}>
-                {/* 1st card */}
-                <div class=" border-black border-3 rounded-md bg-white text-center transition-transform hover:rotate-0">
-                  {card.card ? (
-                    <div
-                      class={`rounded-md p-4 text-md sm:text-md md:text-xl sm:w-64 md:w-80 text-center transition-transform hover:rotate-0 ${card.position}`}
-                    >
-                      <h1 class="border-2 border-dino-dark-teal p-5 text-black">
-                        {card.text}
-                      </h1>
-                    </div>
-                  ) : (
-                    <img
-                      src={card.imgsrc}
-                      alt=""
-                      class={`w-52 ${card.position}`}
-                    />
-                  )}
+      <div class="grid grid-cols-2 gap-6 items-center justify-center justify-items-center"> {/* Change flex to grid for 2-column layout */}
+        {
+          cards.map((card, index) => (
+            <div
+              class="border-black border-3 rounded-md bg-white text-center w-fit"
+              style={{ transform: generateRandomTransform() }} // Apply random transform to each card
+              key={index}
+            >
+              {card.card ? (
+                <div class={`${cardContainer} ${card.position}`}>
+                  <h1 class="border-2 border-dino-dark-teal p-5 text-black">
+                    {card.text}
+                  </h1>
                 </div>
-
-                {/* second card */}
-                {nextCard && (
-                  <div class="">
-                    {nextCard.card ? (
-                      <div
-                        class={`bg-white border-black border-3 rounded-md p-4 text-md sm:text-md md:text-xl sm:w-64 md:w-80 text-center transition-transform hover:rotate-0 ${nextCard.position}`}
-                      >
-                        <h1 class="border-2 border-dino-dark-teal p-5 text-black">
-                          {nextCard.text}
-                        </h1>
-                      </div>
-                    ) : (
-                      <img
-                        src={nextCard.imgsrc}
-                        alt=""
-                        class={`w-52 ${nextCard.position}`}
-                      />
-                    )}
-                  </div>
-                )}
-              </div>
-            );
-          }
-
-          return null;
-        })
-      }
+              ) : (
+                <img
+                  src={card.imgsrc}
+                  alt=""
+                  class={`w-52 ${card.position}`}
+                />
+              )}
+            </div>
+          ))
+        }
+      </div>
     </div>
 
     {/* mobile */}
     <div class="sm:hidden flex flex-col gap-5 items-center pt-10">
       {
         cards.map((card, index) => (
-          <div>
+          <div
+            class="border-black border-3 rounded-md bg-white text-center"
+            style={{ transform: generateRandomTransform() }} // Apply random transform to each card
+            key={index}
+          >
             {card.card ? (
               <div class="border-black border-3 rounded-md bg-white p-4 w-64 text-center transition-transform hover:rotate-0">
                 <h1 class="border-2 border-dino-dark-teal p-5 text-black">
