@@ -2,12 +2,12 @@
 const cards = [
   {
     imgsrc: "",
-    text: "ragnohacks is a 10 hour long time ipajsefpij apsejf piasjefpi jaseipfjp ijaseif",
+    text: "At Apocalypse, don’t worry about being realistic. Build the projects that’d never make sense IRL, but would be perfect for tackling the zombies—from post-apocalyptic food delivery to zombie-sized mousetraps.",
     position: "",
     card: true,
   },
   {
-    imgsrc: "/placeholder.jpg",
+    imgsrc: "/test.jpeg",
     position: "",
     card: false,
   },
@@ -18,84 +18,54 @@ const cards = [
   },
   {
     imgsrc: "",
-    text: "ragnohacks is a 10 hour long time ipajsefpij apsejf piasjefpi jaseipfjp ijaseif",
+    text: "Another card content asdf asdf asdfas gasef sdfasgasefasdhere...",
     position: "",
     card: true,
   },
   {
     imgsrc: "",
-    text: "ragnohacks is a 10 hour long time ipajsefpij apsejf piasjefpi jaseipfjp ijaseif",
+    text: "Another card content asdf asdf asdfas gasef sdfasgasefasdhere...",
     position: "",
     card: true,
   },
   {
     imgsrc: "",
-    text: "ragnohacks is a 10 hour long time ipajsefpij apsejf piasjefpi jaseipfjp ijaseif",
+    text: "Another card content asdf asdf asdfas gasef sdfasgasefasdhere...",
+    position: "",
+    card: true,
+  },
+  {
+    imgsrc: "",
+    text: "Another card content asdf asdf asdfas gasef sdfasgasefasdhere...",
+    position: "",
+    card: true,
+  },
+  {
+    imgsrc: "",
+    text: "Another card content asdf asdf asdfas gasef sdfasgasefasdhere...",
     position: "",
     card: true,
   },
 ];
 
-// Function to generate random position and rotation
-const generateRandomTransform = () => {
-  const x = Math.floor(Math.random() * 80) - 50; // Random x between -10 and 10
-  const y = Math.floor(Math.random() * 20) - 10; // Random y between -10 and 10
-  const rotation = Math.floor(Math.random() * 20) - 10; // Random rotation between -10 and 10
-  return `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
-};
-
-const cardContainer =
-  "rounded-md p-4 text-md sm:text-md md:text-xl sm:w-64 md:w-80 text-center transition-transform hover:rotate-0 bg-white";
+// Pre-render HTML markup for cards
 ---
-<section class="bg-dino-dark-teal h-svh">
-  <div class="max-w-6xl relative mx-auto">
-    <div class="hidden sm:block">
-      <div class="grid grid-cols-2 gap-6 items-center justify-center justify-items-center"> {/* Change flex to grid for 2-column layout */}
-        {
-          cards.map((card, index) => (
-            <div
-              class="border-black border-3 rounded-md bg-white text-center w-fit"
-              style={{ transform: generateRandomTransform() }} // Apply random transform to each card
-              key={index}
-            >
-              {card.card ? (
-                <div class={`${cardContainer} ${card.position}`}>
-                  <h1 class="border-2 border-dino-dark-teal p-5 text-black">
-                    {card.text}
-                  </h1>
-                </div>
-              ) : (
-                <img
-                  src={card.imgsrc}
-                  alt=""
-                  class={`w-52 ${card.position}`}
-                />
-              )}
-            </div>
-          ))
-        }
-      </div>
-    </div>
 
-    {/* mobile */}
-    <div class="sm:hidden flex flex-col gap-5 items-center pt-10">
+<section class="relative bg-dino-dark-teal h-svh pt-10">
+  <div class="relative h-full max-w-6xl mx-auto">
+    <div id="cards-container" class="relative h-full">
       {
         cards.map((card, index) => (
           <div
-            class="border-black border-3 rounded-md bg-white text-center"
-            style={{ transform: generateRandomTransform() }} // Apply random transform to each card
-            key={index}
+            id={`card-${index}`}
+            class="absolute text-center bg-white border-black rounded-md border-3 w-fit"
           >
             {card.card ? (
-              <div class="border-black border-3 rounded-md bg-white p-4 w-64 text-center transition-transform hover:rotate-0">
-                <h1 class="border-2 border-dino-dark-teal p-5 text-black">
-                  {card.text}
-                </h1>
+              <div class="p-3 text-sm text-black max-w-xs">
+                <h1 class="p-3 border-2 border-dino-dark-teal">{card.text}</h1>
               </div>
             ) : (
-              <div>
-                <img src={card.imgsrc} alt="" class="px-5" />
-              </div>
+              <img src={card.imgsrc} alt="" class="w-60 rounded-md border-solid border-white border-4" />
             )}
           </div>
         ))
@@ -103,3 +73,60 @@ const cardContainer =
     </div>
   </div>
 </section>
+
+<script>
+  window.onload = function() {
+    const cardsContainer = document.getElementById("cards-container");
+    const cardElements = document.querySelectorAll("[id^=card-]");
+    const containerWidth = cardsContainer.offsetWidth;
+    const containerHeight = cardsContainer.offsetHeight;
+    
+    const cardPadding = 20; // Padding to avoid overlap
+    const placedCards = [];
+
+    function generateRandomPosition(cardWidth, cardHeight) {
+      let x, y, overlap;
+      let attempts = 0;
+
+      do {
+        x = Math.floor(Math.random() * (containerWidth - cardWidth - cardPadding));
+        y = Math.floor(Math.random() * (containerHeight - cardHeight - cardPadding));
+        overlap = false;
+
+        // Check for overlap with existing cards
+        for (const placedCard of placedCards) {
+          if (
+            x < placedCard.x + placedCard.width + cardPadding &&
+            x + cardWidth + cardPadding > placedCard.x &&
+            y < placedCard.y + placedCard.height + cardPadding &&
+            y + cardHeight + cardPadding > placedCard.y
+          ) {
+            overlap = true;
+            break;
+          }
+        }
+
+        attempts++;
+        if (attempts > 100) {
+          console.error("Couldn't find valid position after 100 attempts");
+          return { x: 0, y: 0 }; // Return a default position if not found
+        }
+      } while (overlap);
+
+      placedCards.push({ x, y, width: cardWidth, height: cardHeight });
+      return { x, y };
+    }
+
+    // Place cards after ensuring they are rendered
+    cardElements.forEach((cardElement) => {
+      // Force browser to calculate card dimensions
+      const cardRect = cardElement.getBoundingClientRect();
+      const cardWidth = cardRect.width;
+      const cardHeight = cardRect.height;
+
+      const { x, y } = generateRandomPosition(cardWidth, cardHeight);
+      cardElement.style.left = `${x}px`;
+      cardElement.style.top = `${y}px`;
+    });
+  };
+</script>
