@@ -51,8 +51,9 @@ const cards = [
 // Pre-render HTML markup for cards
 ---
 
-<section class="relative bg-dino-dark-teal h-svh pt-10">
+<section class="relative bg-dino-dark-teal h-svh pt-10 hidden sm:block">
   <div class="relative h-full max-w-6xl mx-auto">
+    <!-- Desktop view -->
     <div id="cards-container" class="relative h-full">
       {
         cards.map((card, index) => (
@@ -65,7 +66,35 @@ const cards = [
                 <h1 class="p-3 border-2 border-dino-dark-teal">{card.text}</h1>
               </div>
             ) : (
-              <img src={card.imgsrc} alt="" class="w-60 rounded-md border-solid border-white border-4" />
+              <img
+                src={card.imgsrc}
+                alt=""
+                class="w-60 rounded-md border-solid border-white border-4"
+              />
+            )}
+          </div>
+        ))
+      }
+    </div>
+</section>
+
+<section class="bg-dino-dark-teal pt-10 pb-5 block sm:hidden">
+  <div class="relative max-w-6xl mx-auto">
+    <!-- Mobile view -->
+    <div class=" px-5">
+      {
+        cards.map((card, index) => (
+          <div key={index} class="flex flex-col items-center text-center bg-white border-black rounded-md border-3 mb-5">
+            {card.card ? (
+              <div class="p-3 text-sm text-black">
+                <h1 class="p-3 border-2 border-dino-dark-teal">{card.text}</h1>
+              </div>
+            ) : (
+              <img
+                src={card.imgsrc}
+                alt=""
+                class="rounded-md border-solid border-white border-4"
+              />
             )}
           </div>
         ))
@@ -74,13 +103,15 @@ const cards = [
   </div>
 </section>
 
+
+
 <script>
-  window.onload = function() {
+  function placeCards() {
     const cardsContainer = document.getElementById("cards-container");
     const cardElements = document.querySelectorAll("[id^=card-]");
     const containerWidth = cardsContainer.offsetWidth;
     const containerHeight = cardsContainer.offsetHeight;
-    
+
     const cardPadding = 20; // Padding to avoid overlap
     const placedCards = [];
 
@@ -89,8 +120,12 @@ const cards = [
       let attempts = 0;
 
       do {
-        x = Math.floor(Math.random() * (containerWidth - cardWidth - cardPadding));
-        y = Math.floor(Math.random() * (containerHeight - cardHeight - cardPadding));
+        x = Math.floor(
+          Math.random() * (containerWidth - cardWidth - cardPadding)
+        );
+        y = Math.floor(
+          Math.random() * (containerHeight - cardHeight - cardPadding)
+        );
         overlap = false;
 
         // Check for overlap with existing cards
@@ -128,5 +163,8 @@ const cards = [
       cardElement.style.left = `${x}px`;
       cardElement.style.top = `${y}px`;
     });
-  };
+  }
+
+  window.onload = placeCards;
+  window.onresize = placeCards;
 </script>
