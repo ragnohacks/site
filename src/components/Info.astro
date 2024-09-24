@@ -104,7 +104,6 @@ const cards = [
 </section>
 
 
-
 <script>
   function placeCards() {
     const cardsContainer = document.getElementById("cards-container");
@@ -152,6 +151,10 @@ const cards = [
       return { x, y };
     }
 
+    function getRandomRotation() {
+      return Math.floor(Math.random() * 21) - 10; // Random rotation between -10 and 10 degrees
+    }
+
     // Place cards after ensuring they are rendered
     cardElements.forEach((cardElement) => {
       // Force browser to calculate card dimensions
@@ -160,8 +163,11 @@ const cards = [
       const cardHeight = cardRect.height;
 
       const { x, y } = generateRandomPosition(cardWidth, cardHeight);
+      const rotation = getRandomRotation();
+
       cardElement.style.left = `${x}px`;
       cardElement.style.top = `${y}px`;
+      cardElement.style.transform = `rotate(${rotation}deg)`;
     });
   }
 
