@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import ssiCanadaImage from "../assets/sponsor/ssi-canada.png";
 import shopifyImage from "../assets/sponsor/shopify.png";
+import analogDevicesImage from "../assets/sponsor/analog-devices.png";
 ---
 
 <section
@@ -21,7 +22,7 @@ import shopifyImage from "../assets/sponsor/shopify.png";
     </div>
 
     <div class="space-y-6">
-      <p class="text-white text-2xl">
+      <p class="text-white text-2xl px-2">
         Help make Ottawa’s first in-person high school hackathon happen!
       </p>
       <div class="text-white flex flex-col items-center space-y-1">
@@ -66,6 +67,18 @@ import shopifyImage from "../assets/sponsor/shopify.png";
             />
           </a>
           <a
+            href="https://www.analog.com/"
+            target="_blank"
+            class="motion-safe:hover:scale-105 motion-safe:transition-all flex"
+          >
+            <Image
+              src={analogDevicesImage}
+              alt="Analog Devices"
+              class="w-auto h-28 md:h-40"
+            />
+          </a>
+        </div>
+        <a
             href="https://dorahacks.io/"
             target="_blank"
             class="motion-safe:hover:scale-105 motion-safe:transition-all flex"
@@ -76,7 +89,6 @@ import shopifyImage from "../assets/sponsor/shopify.png";
               class="w-auto h-12 md:h-16"
             />
           </a>
-        </div>
       </div>
     </div>
   </div>
