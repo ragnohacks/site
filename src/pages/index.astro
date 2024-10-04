@@ -1,33 +1,50 @@
 ---
-import Hero from "../components/Hero/Hero.astro";
-import Lore from "../components/Lore.astro";
-import Navbar from "../components/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
-import Footer from "../components/Footer.astro";
-import Sponsor from "../components/Sponsor.astro";
-import FAQ from "../components/FAQ.astro";
-import Important from "../components/Important.astro";
-import Overview from "../components/Overview.astro";
-import Clouds from "../components/Clouds.astro";
 ---
 
-<Layout title="Ragnohacks: Ottawa's first in-person high school hackathon">
-  <header>
-    <Navbar />
-    <Hero />
-  </header>
-  <Clouds />
-  <main>
-    <Lore />
-    <Clouds />
-    <Overview />
-    <Important />
-    <Clouds />
-    <Sponsor />
-    <Clouds />
-    <FAQ />
-  </main>
-  <footer>
-    <Footer />
-  </footer>
+<Layout title="Ragnohacks is Changing to Counterspell Ottawa">
+  <div
+    class="min-h-screen flex tracking-wide items-center justify-center bg-dino-teal"
+  >
+    <div class="bg-dino-teal text-white py-14 px-20 space-y-12 rounded-2xl">
+      <div class="space-y-3">
+        <h1 class="text-5xl font-semibold">
+          Ragnohacks is now Counterspell Ottawa
+        </h1>
+        <p class="text-2xl">
+          This change allows us to being even more exciting stuff to you at
+          Counterspell Ottawa!<br />The date & theme are changing, but we're
+          still a hackathon filled with creativity and energy!
+        </p>
+      </div>
+      <div class="flex flex-col space-y-2">
+        <a
+          class="text-2xl hover:underline"
+          href="https://counterspell.hackclub.com/ottawa"
+          >Go to Counterspell Ottawa →</a
+        >
+        <a class="text-2xl hover:underline" href="/old"
+          >← Visit the old Ragnohacks website</a
+        >
+      </div>
+      <div>
+        You will be redirected to Counterspell Ottawa in <span id="countdown"
+          >30</span
+        > seconds.
+      </div>
+    </div>
+  </div>
 </Layout>
+
+<script lang="ts">
+  let countdown = 30;
+  const countdownElement = document.getElementById("countdown");
+  const interval = setInterval(() => {
+    countdown--;
+    countdownElement.textContent = countdown.toString();
+    if (countdown === 0) {
+      clearInterval(interval);
+      window.location.href = "https://counterspell.hackclub.com/ottawa";
+    }
+  }, 1000);
+</script>
